@@ -1,0 +1,4 @@
+cset set -c 0 -s /user/one_cpu
+cset proc -s one_cpu -e ./loop
+cset shield -c 0-30
+cset shield -r #remove shields

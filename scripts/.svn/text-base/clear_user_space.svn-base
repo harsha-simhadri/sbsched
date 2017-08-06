@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo cset shield --unshield
+sudo cset shield -c 0-30

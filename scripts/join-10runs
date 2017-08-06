@@ -1,0 +1,10 @@
+ join 1.dat 2.dat > join1.dat
+ join join1.dat 3.dat > join2.dat
+ join join2.dat 4.dat > join3.dat
+ join join3.dat 5.dat > join4.dat
+ join join4.dat 6.dat > join5.dat
+ join join5.dat 7.dat > join6.dat
+ join join6.dat 8.dat > join7.dat
+ join join7.dat 9.dat > join8.dat
+ join join8.dat 10.dat > join.dat
+rm -f join[1-8].*

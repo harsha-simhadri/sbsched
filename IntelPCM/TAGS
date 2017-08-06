@@ -1,0 +1,1643 @@
+
+readmem.cpp,363
+inline double my_timestamp()my_timestamp26,1694
+struct TT33,1834
+    int key[1];key35,1845
+    int data[15];data36,1861
+    T() { }T38,1880
+    T(int a) { key[0] = a; }T39,1892
+    bool operator == (const T & k) constoperator ==41,1922
+void Memory_intensive_task(DS & ds)Memory_intensive_task48,2034
+int main(int argc, char * argv[])main54,2124
+
+cpucounters.h,20256
+#define CPUCOUNTERS_HEADERCPUCOUNTERS_HEADER17,1585
+#define INTEL_PCM_VERSION INTEL_PCM_VERSION25,1816
+#define INTELPCM_APIINTELPCM_API28,1910
+#define PCM_PERF_COUNT_HW_REF_CPU_CYCLES PCM_PERF_COUNT_HW_REF_CPU_CYCLES43,2174
+struct INTELPCM_API TopologyEntry // decribes a coreTopologyEntry68,2640
+    int32 os_id;os_id70,2695
+    int32 socket;socket71,2712
+    int32 core_id;core_id72,2730
+    TopologyEntry() : os_id(-1), socket(-1), core_id(-1) { }TopologyEntry74,2750
+class JKT_Uncore_PciJKT_Uncore_Pci78,2921
+    int bus, groupnr;bus80,2944
+    int bus, groupnr;groupnr80,2944
+    PciHandleM ** imcHandles;imcHandles81,2966
+    uint32 num_imc_channels;num_imc_channels82,2996
+    PciHandleM ** qpiLLHandles;qpiLLHandles84,3026
+    uint32 num_qpi_ports;num_qpi_ports85,3058
+    uint64 qpi_speed;qpi_speed86,3084
+template class INTELPCM_API std::allocator<TopologyEntry>;allocator151,5889
+template class INTELPCM_API std::vector<TopologyEntry>;vector152,5948
+template class INTELPCM_API std::allocator<CounterWidthExtender*>;allocator153,6004
+template class INTELPCM_API std::vector<CounterWidthExtender*>;vector154,6071
+template class INTELPCM_API std::allocator<uint32>;allocator155,6135
+template class INTELPCM_API std::vector<uint32>;vector156,6187
+template class INTELPCM_API std::allocator<char>;allocator157,6236
+class INTELPCM_API PCMPCM165,6469
+    const char * UnsupportedMessage;UnsupportedMessage170,6602
+    int32 cpu_family;cpu_family171,6639
+    int32 cpu_model;cpu_model172,6661
+    int32 threads_per_core;threads_per_core173,6682
+    int32 num_cores;num_cores174,6710
+    int32 num_sockets;num_sockets175,6731
+    uint32 core_gen_counter_num_max;core_gen_counter_num_max176,6754
+    uint32 core_gen_counter_num_used;core_gen_counter_num_used177,6791
+    uint32 core_gen_counter_width;core_gen_counter_width178,6829
+    uint32 core_fixed_counter_num_max;core_fixed_counter_num_max179,6864
+    uint32 core_fixed_counter_num_used;core_fixed_counter_num_used180,6903
+    uint32 core_fixed_counter_width;core_fixed_counter_width181,6943
+    uint32 uncore_gen_counter_num_max;uncore_gen_counter_num_max182,6980
+    uint32 uncore_gen_counter_num_used;uncore_gen_counter_num_used183,7019
+    uint32 uncore_gen_counter_width;uncore_gen_counter_width184,7059
+    uint32 uncore_fixed_counter_num_max;uncore_fixed_counter_num_max185,7096
+    uint32 uncore_fixed_counter_num_used;uncore_fixed_counter_num_used186,7137
+    uint32 uncore_fixed_counter_width;uncore_fixed_counter_width187,7179
+    int32 perfmon_version;perfmon_version188,7218
+    int32 perfmon_config_anythread;perfmon_config_anythread189,7245
+    uint64 nominal_frequency;nominal_frequency190,7281
+    uint64 qpi_speed; // in GBytes/secondqpi_speed191,7311
+    int32 pkgThermalSpecPower, pkgMinimumPower, pkgMaximumPower;pkgThermalSpecPower192,7353
+    int32 pkgThermalSpecPower, pkgMinimumPower, pkgMaximumPower;pkgMinimumPower192,7353
+    int32 pkgThermalSpecPower, pkgMinimumPower, pkgMaximumPower;pkgMaximumPower192,7353
+    std::vector<TopologyEntry> topology;topology194,7419
+    std::string errorMessage;errorMessage195,7460
+    static PCM * instance;instance197,7491
+    MsrHandle ** MSR;MSR198,7518
+    JKT_Uncore_Pci ** jkt_uncore_pci;jkt_uncore_pci199,7540
+    double joulesPerEnergyUnit;joulesPerEnergyUnit200,7578
+    std::vector<CounterWidthExtender*> snb_energy_status;snb_energy_status201,7610
+    std::vector<CounterWidthExtender*> jkt_dram_energy_status;jkt_dram_energy_status202,7668
+    ClientBW * clientBW;clientBW205,7733
+    CounterWidthExtender * clientImcReads;clientImcReads206,7758
+    CounterWidthExtender * clientImcWrites;clientImcWrites207,7801
+    bool disable_JKT_workaround;disable_JKT_workaround209,7846
+    enum ProgramMode {ProgramMode212,7951
+        DEFAULT_EVENTS = 0,         /*!< Default choice of events, the additional parameter is not needed and ignored */DEFAULT_EVENTS213,7974
+        CUSTOM_CORE_EVENTS = 1,     /*!< Custom set of core events specified in the parameter to the program method. The parameter must be a pointer to array of four \c CustomCoreEventDescription values */CUSTOM_CORE_EVENTS214,8095
+        EXT_CUSTOM_CORE_EVENTS = 2, /*!< Custom set of core events specified in the parameter to the program method. The parameter must be a pointer to a \c ExtendedCustomCoreEventDescription  data structure */EXT_CUSTOM_CORE_EVENTS215,8301
+        INVALID_MODE                /*!< Non-programmed mode */INVALID_MODE216,8512
+    enum ErrorCode {ErrorCode220,8635
+        Success = 0,Success221,8656
+        MSRAccessDenied = 1,MSRAccessDenied222,8677
+        PMUBusy = 2,PMUBusy223,8706
+        UnknownErrorUnknownError224,8727
+    struct CustomCoreEventDescriptionCustomCoreEventDescription234,9120
+        int32 event_number, umask_value;event_number236,9164
+        int32 event_number, umask_value;umask_value236,9164
+    struct ExtendedCustomCoreEventDescriptionExtendedCustomCoreEventDescription248,9687
+        FixedEventControlRegister * fixedCfg; // if NULL, then default configuration performed for fixed countersfixedCfg250,9739
+        uint32 nGPCounters; // number of general purpose countersnGPCounters251,9853
+        EventSelectRegister * gpCounterCfg; // general purpose counters, if NULL, then default configuration performed for GP countersgpCounterCfg252,9919
+    ProgramMode mode;mode256,10071
+    CustomCoreEventDescription coreEventDesc[4];coreEventDesc257,10093
+    HANDLE numInstancesSemaphore;     // global semaphore that counts the number of PCM instances on the systemnumInstancesSemaphore260,10167
+    sem_t * numInstancesSemaphore;numInstancesSemaphore263,10371
+    std::vector<uint32> socketRefCore;socketRefCore266,10422
+    bool canUsePerf;canUsePerf268,10462
+    std::vector< std::vector<int> > perfEventHandle;perfEventHandle270,10503
+        PERF_INST_RETIRED_ANY_POS = 0,PERF_INST_RETIRED_ANY_POS274,10632
+        PERF_CPU_CLK_UNHALTED_THREAD_POS = 1,PERF_CPU_CLK_UNHALTED_THREAD_POS275,10671
+        PERF_CPU_CLK_UNHALTED_REF_POS = 2,PERF_CPU_CLK_UNHALTED_REF_POS276,10717
+        PERF_GEN_EVENT_0_POS = 3,PERF_GEN_EVENT_0_POS277,10760
+        PERF_GEN_EVENT_1_POS = 4,PERF_GEN_EVENT_1_POS278,10794
+        PERF_GEN_EVENT_2_POS = 5,PERF_GEN_EVENT_2_POS279,10828
+        PERF_GEN_EVENT_3_POS = 6PERF_GEN_EVENT_3_POS280,10862
+        PERF_GROUP_LEADER_COUNTER = PERF_INST_RETIRED_ANY_POS PERF_GROUP_LEADER_COUNTER284,10914
+    const std::string & getErrorMessage() constgetErrorMessage333,12476
+    enum SupportedCPUModelsSupportedCPUModels444,17728
+        NEHALEM_EP = 26,NEHALEM_EP446,17762
+        NEHALEM_EP_2 = 30,NEHALEM_EP_2447,17787
+        ATOM = 28,ATOM448,17814
+        ATOM_2 = 53,ATOM_2449,17833
+        CLARKDALE = 37,CLARKDALE450,17854
+        WESTMERE_EP = 44,WESTMERE_EP451,17878
+        NEHALEM_EX = 46,NEHALEM_EX452,17904
+        WESTMERE_EX = 47,WESTMERE_EX453,17929
+        SANDY_BRIDGE = 42,SANDY_BRIDGE454,17955
+        JAKETOWN = 45,JAKETOWN455,17982
+        IVY_BRIDGE = 58IVY_BRIDGE456,18005
+    uint32 getCPUModel() { return cpu_model; }getCPUModel461,18100
+    uint32 getSocketId(uint32 core_id)getSocketId466,18268
+    uint64 getQPILinksPerSocket() constgetQPILinksPerSocket473,18499
+    uint64 getCboxesPerSocket () constgetCboxesPerSocket493,18913
+    uint32 getMaxIPC() constgetMaxIPC504,19160
+    uint64 getQPILinkSpeed() const { return qpi_speed; }getQPILinkSpeed539,20475
+    double getJoulesPerEnergyUnit() const { return joulesPerEnergyUnit; }getJoulesPerEnergyUnit542,20613
+    int32 getPackageThermalSpecPower() const { return pkgThermalSpecPower; }getPackageThermalSpecPower545,20769
+    int32 getPackageMinimumPower() const { return pkgMinimumPower; }getPackageMinimumPower548,20943
+    int32 getPackageMaximumPower() const { return pkgMaximumPower; }getPackageMaximumPower551,21109
+    inline void disableJKTWorkaround() { disable_JKT_workaround = true; }disableJKTWorkaround557,21400
+    bool packageEnergyMetricsAvailable() constpackageEnergyMetricsAvailable570,21903
+    bool dramEnergyMetricsAvailable() constdramEnergyMetricsAvailable579,22146
+    bool packageThermalMetricsAvailable() constpackageThermalMetricsAvailable584,22246
+    bool outgoingQPITrafficMetricsAvailable() constoutgoingQPITrafficMetricsAvailable589,22352
+    bool qpiUtilizationMetricsAvailable() constqpiUtilizationMetricsAvailable598,22588
+    bool memoryTrafficMetricsAvailable() constmemoryTrafficMetricsAvailable603,22702
+    bool extendedCStateMetricsAvailable() constextendedCStateMetricsAvailable611,22887
+class BasicCounterStateBasicCounterState626,23234
+    uint64 InstRetiredAny;InstRetiredAny682,26911
+    uint64 CpuClkUnhaltedThread;CpuClkUnhaltedThread683,26938
+    uint64 CpuClkUnhaltedRef;CpuClkUnhaltedRef684,26971
+        uint64 L3Miss;L3Miss686,27013
+        uint64 Event0;Event0687,27036
+        uint64 ArchLLCMiss;ArchLLCMiss688,27059
+        uint64 L3UnsharedHit;L3UnsharedHit691,27106
+        uint64 Event1;Event1692,27136
+        uint64 ArchLLCRef;ArchLLCRef693,27159
+        uint64 L2HitM;L2HitM696,27205
+        uint64 Event2;Event2697,27228
+        uint64 L2Hit;L2Hit700,27270
+        uint64 Event3;Event3701,27292
+    uint64 InvariantTSC; // invariant time stamp counterInvariantTSC703,27322
+    uint64 C3Residency;C3Residency704,27379
+    uint64 C6Residency;C6Residency705,27403
+    uint64 C7Residency;C7Residency706,27427
+    int32 ThermalHeadroom;ThermalHeadroom707,27451
+    BasicCounterState() : BasicCounterState710,27526
+    virtual ~BasicCounterState() { }~BasicCounterState724,27850
+   int32 getThermalHeadroom() const  { return ThermalHeadroom; }getThermalHeadroom727,27941
+class JKTUncorePowerStateJKTUncorePowerState732,28061
+   uint64 QPIClocks[2], QPIL0pTxCycles[2], QPIL1Cycles[2];QPIClocks734,28089
+   uint64 QPIClocks[2], QPIL0pTxCycles[2], QPIL1Cycles[2];QPIL0pTxCycles734,28089
+   uint64 QPIClocks[2], QPIL0pTxCycles[2], QPIL1Cycles[2];QPIL1Cycles734,28089
+   uint64 DRAMClocks[4];DRAMClocks735,28148
+   uint64 MCCounter[4][4];// channel X counterMCCounter736,28173
+   uint64 PCUCounter[4];PCUCounter737,28220
+   uint64 PackageEnergyStatus;PackageEnergyStatus738,28245
+   uint64 DRAMEnergyStatus;DRAMEnergyStatus739,28276
+   int32 PackageThermalHeadroom;PackageThermalHeadroom740,28304
+   int32 getPackageThermalHeadroom() const  { return PackageThermalHeadroom; }getPackageThermalHeadroom760,29608
+uint64 getQPIClocks(uint32 port, const CounterStateType & before, const CounterStateType & after)getQPIClocks769,29912
+int32 getThermalHeadroom(const CounterStateType & /* before */, const CounterStateType & after)getThermalHeadroom776,30107
+uint64 getQPIL0pTxCycles(uint32 port, const CounterStateType & before, const CounterStateType & after)getQPIL0pTxCycles787,30503
+uint64 getQPIL1Cycles(uint32 port, const CounterStateType & before, const CounterStateType & after)getQPIL1Cycles798,30935
+double getNormalizedQPIL0pTxCycles(uint32 port, const CounterStateType & before, const CounterStateType & after)getNormalizedQPIL0pTxCycles810,31428
+double getNormalizedQPIL1Cycles(uint32 port, const CounterStateType & before, const CounterStateType & after)getNormalizedQPIL1Cycles822,31966
+uint64 getDRAMClocks(uint32 channel, const CounterStateType & before, const CounterStateType & after)getDRAMClocks833,32399
+uint64 getMCCounter(uint32 channel, uint32 counter, const CounterStateType & before, const CounterStateType & after)getMCCounter845,32914
+uint64 getPCUCounter(uint32 counter, const CounterStateType & before, const CounterStateType & after)getPCUCounter856,33427
+uint64 getPCUClocks(const CounterStateType & before, const CounterStateType & after)getPCUClocks866,33806
+uint64 getConsumedEnergy(const CounterStateType & before, const CounterStateType & after)getConsumedEnergy876,34183
+uint64 getDRAMConsumedEnergy(const CounterStateType & before, const CounterStateType & after)getDRAMConsumedEnergy886,34569
+double getConsumedJoules(const CounterStateType & before, const CounterStateType & after)getConsumedJoules896,34946
+double getDRAMConsumedJoules(const CounterStateType & before, const CounterStateType & after)getDRAMConsumedJoules909,35376
+class UncoreCounterStateUncoreCounterState921,35718
+    uint64 UncMCFullWrites;UncMCFullWrites941,36925
+    uint64 UncMCNormalReads;UncMCNormalReads942,36953
+    uint64 PackageEnergyStatus;PackageEnergyStatus943,36982
+    uint64 DRAMEnergyStatus;DRAMEnergyStatus944,37014
+    uint64 C2Residency;C2Residency945,37043
+    uint64 C3Residency;C3Residency946,37067
+    uint64 C6Residency;C6Residency947,37091
+    uint64 C7Residency;C7Residency948,37115
+    UncoreCounterState() :UncoreCounterState951,37187
+    virtual ~UncoreCounterState() { }~UncoreCounterState960,37393
+class CoreCounterState : public BasicCounterStateCoreCounterState964,37480
+class SocketCounterState : public BasicCounterState, public UncoreCounterStateSocketCounterState972,37604
+    void readAndAggregate(MsrHandle * handle)readAndAggregate977,37719
+class SystemCounterState : public BasicCounterState, public UncoreCounterStateSystemCounterState987,37934
+    std::vector<std::vector<uint64> > incomingQPIPackets;incomingQPIPackets990,38037
+    std::vector<std::vector<uint64> > outgoingQPIIdleFlits;outgoingQPIIdleFlits991,38095
+    std::vector<std::vector<uint64> > outgoingQPIDataNonDataFlits;outgoingQPIDataNonDataFlits992,38155
+    uint64 uncoreTSC;uncoreTSC993,38222
+    std::vector<std::vector<uint64> > cboxCounts;cboxCounts996,38262
+    void readAndAggregate(MsrHandle * handle)readAndAggregate1000,38341
+    SystemCounterState() :SystemCounterState1013,39260
+double getIPC(const CounterStateType & before, const CounterStateType & after) // instructions per cyclegetIPC1068,41075
+uint64 getInstructionsRetired(const CounterStateType & before, const CounterStateType & after) // instructionsgetInstructionsRetired1084,41635
+double getExecUsage(const CounterStateType & before, const CounterStateType & after) // usagegetExecUsage1096,42056
+uint64 getInstructionsRetired(const CounterStateType & now) // instructionsgetInstructionsRetired1110,42533
+uint64 getCycles(const CounterStateType & before, const CounterStateType & after) // clocksgetCycles1133,43404
+uint64 getRefCycles(const CounterStateType & before, const CounterStateType & after) // clocksgetRefCycles1149,44057
+uint64 getCycles(const CounterStateType & now) // clocksgetCycles1162,44461
+inline double getCoreIPC(const SystemCounterState & before, const SystemCounterState & after) // instructions per cyclegetCoreIPC1175,44967
+inline double getTotalExecUsage(const SystemCounterState & before, const SystemCounterState & after) // usagegetTotalExecUsage1195,45688
+double getAverageFrequency(const CounterStateType & before, const CounterStateType & after) // in HzgetAverageFrequency1211,46258
+double getActiveAverageFrequency(const CounterStateType & before, const CounterStateType & after) // in HzgetActiveAverageFrequency1228,46990
+double getRelativeFrequency(const CounterStateType & before, const CounterStateType & after) // fraction of nominal frequencygetRelativeFrequency1245,47711
+double getActiveRelativeFrequency(const CounterStateType & before, const CounterStateType & after) // fraction of nominal frequencygetActiveRelativeFrequency1261,48464
+double getCyclesLostDueL3CacheMisses(const CounterStateType & before, const CounterStateType & after) // 0.0 - 1.0getCyclesLostDueL3CacheMisses1278,49293
+double getCyclesLostDueL2CacheMisses(const CounterStateType & before, const CounterStateType & after) // 0.0 - 1.0getCyclesLostDueL2CacheMisses1298,50229
+double getL2CacheHitRatio(const CounterStateType & before, const CounterStateType & after) // 0.0 - 1.0getL2CacheHitRatio1319,51071
+double getL3CacheHitRatio(const CounterStateType & before, const CounterStateType & after) // 0.0 - 1.0getL3CacheHitRatio1347,52131
+uint64 getL3CacheMisses(const CounterStateType & before, const CounterStateType & after)getL3CacheMisses1369,52947
+uint64 getL2CacheMisses(const CounterStateType & before, const CounterStateType & after)getL2CacheMisses1383,53461
+uint64 getL2CacheHits(const CounterStateType & before, const CounterStateType & after)getL2CacheHits1403,54202
+uint64 getL3CacheHitsNoSnoop(const CounterStateType & before, const CounterStateType & after)getL3CacheHitsNoSnoop1422,54920
+uint64 getL3CacheHitsSnoop(const CounterStateType & before, const CounterStateType & after)getL3CacheHitsSnoop1436,55500
+uint64 getL3CacheHits(const CounterStateType & before, const CounterStateType & after)getL3CacheHits1451,56020
+uint64 getInvariantTSC(const CounterStateType & before, const CounterStateType & after)getInvariantTSC1466,56590
+inline double getPackageC2Residency(const CounterStateType & before, const CounterStateType & after)getPackageC2Residency1479,57013
+inline double getPackageC3Residency(const CounterStateType & before, const CounterStateType & after)getPackageC3Residency1491,57532
+inline double getPackageC6Residency(const CounterStateType & before, const CounterStateType & after)getPackageC6Residency1503,58051
+inline double getPackageC7Residency(const CounterStateType & before, const CounterStateType & after)getPackageC7Residency1515,58570
+inline double getCoreC3Residency(const CounterStateType & before, const CounterStateType & after)getCoreC3Residency1527,59086
+inline double getCoreC6Residency(const CounterStateType & before, const CounterStateType & after)getCoreC6Residency1539,59597
+inline double getCoreC7Residency(const CounterStateType & before, const CounterStateType & after)getCoreC7Residency1551,60108
+inline double getCoreC0Residency(const CounterStateType & before, const CounterStateType & after)getCoreC0Residency1563,60624
+inline double getCoreC1Residency(const CounterStateType & before, const CounterStateType & after)getCoreC1Residency1575,61089
+uint64 getBytesReadFromMC(const CounterStateType & before, const CounterStateType & after)getBytesReadFromMC1595,61836
+uint64 getBytesWrittenToMC(const CounterStateType & before, const CounterStateType & after)getBytesWrittenToMC1607,62251
+uint64 getNumberOfCustomEvents(int32 eventCounterNr, const CounterStateType & before, const CounterStateType & after)getNumberOfCustomEvents1622,62790
+inline uint64 getIncomingQPILinkBytes(uint32 socketNr, uint32 linkNr, const SystemCounterState & before, const SystemCounterState & after)getIncomingQPILinkBytes1637,63398
+inline double getIncomingQPILinkUtilization(uint32 socketNr, uint32 linkNr, const SystemCounterState & before, const SystemCounterState & after)getIncomingQPILinkUtilization1655,64179
+inline double getOutgoingQPILinkUtilization(uint32 socketNr, uint32 linkNr, const SystemCounterState & before, const SystemCounterState & after)getOutgoingQPILinkUtilization1676,65181
+inline uint64 getCboxSum (uint32 socketNr, const SystemCounterState & before, const SystemCounterState & after) getCboxSum1710,66738
+inline uint64 getOutgoingQPILinkBytes(uint32 socketNr, uint32 linkNr, const SystemCounterState & before, const SystemCounterState & after)getOutgoingQPILinkBytes1745,67697
+inline uint64 getAllIncomingQPILinkBytes(const SystemCounterState & before, const SystemCounterState & after)getAllIncomingQPILinkBytes1765,68569
+inline uint64 getAllOutgoingQPILinkBytes(const SystemCounterState & before, const SystemCounterState & after)getAllOutgoingQPILinkBytes1787,69369
+inline uint64 getIncomingQPILinkBytes(uint32 socketNr, uint32 linkNr, const SystemCounterState & now)getIncomingQPILinkBytes1811,70138
+inline uint64 getSocketIncomingQPILinkBytes(uint32 socketNr, const SystemCounterState & now)getSocketIncomingQPILinkBytes1824,70668
+inline uint64 getAllIncomingQPILinkBytes(const SystemCounterState & now)getAllIncomingQPILinkBytes1843,71252
+inline double getQPItoMCTrafficRatio(const SystemCounterState & before, const SystemCounterState & after)getQPItoMCTrafficRatio1864,71816
+
+msr.h,216
+#define CPUCounters_MSR_HCPUCounters_MSR_H17,1584
+class MsrHandleMsrHandle34,1884
+    HANDLE hDriver;hDriver37,1918
+    uint32 cpu_id;cpu_id44,2041
+    uint32 getCoreId() { return cpu_id; }getCoreId52,2279
+
+PCM-Service_Win/resource.h,0
+
+PCM-Service_Win/PCMService.h,2709
+namespace PCMServiceNS {PCMServiceNS33,1961
+    ref class MeasureThreadMeasureThread35,1987
+        MeasureThread( System::Diagnostics::EventLog^ log ) : log_(log)log_38,2033
+        void doMeasurements( void )doMeasurements217,18712
+        System::Collections::Hashtable ticksHash_;ticksHash_348,29293
+        System::Collections::Hashtable instRetHash_;instRetHash_349,29344
+        System::Collections::Hashtable ipcHash_;ipcHash_350,29397
+        System::Collections::Hashtable baseTicksForIpcHash_;baseTicksForIpcHash_351,29446
+        System::Collections::Hashtable relFreqHash_;relFreqHash_352,29507
+        System::Collections::Hashtable baseTicksForRelFreqHash_;baseTicksForRelFreqHash_353,29560
+        System::Collections::Hashtable l3CacheMissHash_;l3CacheMissHash_354,29625
+        System::Collections::Hashtable l2CacheMissHash_;l2CacheMissHash_355,29682
+        System::Collections::Hashtable mrbHash_;mrbHash_357,29776
+        System::Collections::Hashtable mwbHash_;mwbHash_358,29825
+        System::Collections::Hashtable qpiHash_;qpiHash_360,29908
+		System::Collections::Hashtable packageEnergyHash_;packageEnergyHash_362,29978
+		System::Collections::Hashtable DRAMEnergyHash_;DRAMEnergyHash_363,30031
+		System::Collections::Hashtable thermalHeadroomHash_;thermalHeadroomHash_365,30103
+		System::Collections::Hashtable CoreC0StateResidencyHash_;		CoreC0StateResidencyHash_367,30183
+		System::Collections::Hashtable CoreC3StateResidencyHash_;CoreC3StateResidencyHash_368,30245
+		System::Collections::Hashtable CoreC6StateResidencyHash_;CoreC6StateResidencyHash_369,30305
+		System::Collections::Hashtable CoreC7StateResidencyHash_;CoreC7StateResidencyHash_370,30365
+		System::Collections::Hashtable PackageC2StateResidencyHash_;PackageC2StateResidencyHash_371,30425
+		System::Collections::Hashtable PackageC3StateResidencyHash_;PackageC3StateResidencyHash_372,30488
+		System::Collections::Hashtable PackageC6StateResidencyHash_;PackageC6StateResidencyHash_373,30551
+		System::Collections::Hashtable PackageC7StateResidencyHash_;PackageC7StateResidencyHash_374,30614
+        System::Diagnostics::EventLog^ log_;log_376,30678
+        PCM* m_;m_378,30724
+	public ref class PCMService : public System::ServiceProcess::ServiceBasePCMService390,31189
+        void SetServiceFail (int ErrorCode) SetServiceFail396,31405
+		PCMService()PCMService416,32390
+		~PCMService()~PCMService427,32578
+		System::ComponentModel::Container ^components;components497,35079
+        System::Threading::Thread^ workerThread_;workerThread_498,35128
+        Driver* drv_;drv_499,35178
+		void InitializeComponent(void)InitializeComponent506,35401
+
+PCM-Service_Win/PCMInstaller.cpp,0
+
+PCM-Service_Win/AssemblyInfo.cpp,0
+
+PCM-Service_Win/PCMService.cpp,52
+int _tmain(int argc, _TCHAR* argv[])_tmain31,1911
+
+PCM-Service_Win/PCMInstaller.h,603
+namespace PMUService {PMUService25,1703
+	public ref class ProjectInstaller : public System::Configuration::Install::InstallerProjectInstaller32,1815
+		ProjectInstaller(void)ProjectInstaller35,1913
+		~ProjectInstaller()~ProjectInstaller47,2112
+    private: System::ServiceProcess::ServiceProcessInstaller^  serviceProcessInstaller1;serviceProcessInstaller154,2194
+    private: System::ServiceProcess::ServiceInstaller^  serviceInstaller1;serviceInstaller156,2299
+		System::ComponentModel::Container ^components;components62,2452
+		void InitializeComponent(void)InitializeComponent69,2702
+
+client_bw.cpp,743
+ClientBW::ClientBW()ClientBW40,1969
+uint64 ClientBW::getImcReads()getImcReads46,2098
+uint64 ClientBW::getImcWrites()getImcWrites51,2147
+ClientBW::~ClientBW() {}~ClientBW56,2197
+ClientBW::ClientBW()ClientBW61,2241
+uint64 ClientBW::getImcReads()getImcReads67,2370
+uint64 ClientBW::getImcWrites()getImcWrites72,2419
+ClientBW::~ClientBW() {}~ClientBW77,2469
+ClientBW::ClientBW()ClientBW83,2526
+uint64 ClientBW::getImcReads()getImcReads89,2655
+uint64 ClientBW::getImcWrites()getImcWrites94,2704
+ClientBW::~ClientBW() {}~ClientBW99,2754
+ClientBW::ClientBW() :ClientBW107,2830
+uint64 ClientBW::getImcReads()getImcReads136,3793
+uint64 ClientBW::getImcWrites()getImcWrites141,3896
+ClientBW::~ClientBW()~ClientBW146,4001
+
+pci.cpp,3265
+PciHandle::PciHandle(uint32 groupnr_, uint32 bus_, uint32 device_, uint32 function_) :PciHandle43,2050
+bool PciHandle::exists(uint32 bus_, uint32 device_, uint32 function_)exists61,2622
+int32 PciHandle::read32(uint64 offset, uint32 * value)read3276,3000
+int32 PciHandle::write32(uint64 offset, uint32 value)write32106,3839
+int32 PciHandle::read64(uint64 offset, uint64 * value)read64131,4617
+int32 PciHandle::write64(uint64 offset, uint64 value)write64166,5570
+PciHandle::~PciHandle()~PciHandle195,6499
+PciHandle::PciHandle(uint32 groupnr_, uint32 bus_, uint32 device_, uint32 function_) :PciHandle203,6693
+bool PciHandle::exists(uint32 bus_, uint32 device_, uint32 function_)exists212,6951
+int32 PciHandle::read32(uint64 offset, uint32 * value)read32219,7150
+int32 PciHandle::write32(uint64 offset, uint32 value)write32226,7331
+int32 PciHandle::read64(uint64 offset, uint64 * value)read64233,7511
+int32 PciHandle::write64(uint64 offset, uint64 value)write64240,7692
+PciHandle::~PciHandle()~PciHandle247,7872
+PciHandle::PciHandle(uint32 groupnr_, uint32 bus_, uint32 device_, uint32 function_) :PciHandle257,8060
+bool PciHandle::exists(uint32 bus_, uint32 device_, uint32 function_)exists275,8516
+int32 PciHandle::read32(uint64 offset, uint32 * value)read32307,9350
+int32 PciHandle::write32(uint64 offset, uint32 value)write32326,9705
+int32 PciHandle::read64(uint64 offset, uint64 * value)read64341,10019
+int32 PciHandle::write64(uint64 offset, uint64 value)write64367,10515
+PciHandle::~PciHandle()~PciHandle390,10982
+PciHandle::PciHandle(uint32 groupnr_, uint32 bus_, uint32 device_, uint32 function_) :PciHandle400,11074
+bool PciHandle::exists(uint32 bus_, uint32 device_, uint32 function_)exists427,11896
+int32 PciHandle::read32(uint64 offset, uint32 * value)read32442,12317
+int32 PciHandle::write32(uint64 offset, uint32 value)write32447,12441
+int32 PciHandle::read64(uint64 offset, uint64 * value)read64452,12571
+int32 PciHandle::write64(uint64 offset, uint64 value)write64457,12694
+PciHandle::~PciHandle()~PciHandle462,12824
+PciHandleM::PciHandleM(uint32 bus_, uint32 device_, uint32 function_) :PciHandleM469,12913
+bool PciHandleM::exists(uint32 /* bus_*/, uint32 /* device_ */, uint32 /* function_ */)exists516,14131
+int32 PciHandleM::read32(uint64 offset, uint32 * value)read32533,14467
+int32 PciHandleM::write32(uint64 offset, uint32 value)write32538,14603
+int32 PciHandleM::read64(uint64 offset, uint64 * value)read64543,14746
+int32 PciHandleM::write64(uint64 offset, uint64 value)write64548,14882
+PciHandleM::~PciHandleM()~PciHandleM553,15025
+uint64 read_base_addr(int mcfg_handle, uint32 group_, uint32 bus)read_base_addr562,15141
+PciHandleMM::PciHandleMM(uint32 groupnr_, uint32 bus_, uint32 device_, uint32 function_) :PciHandleMM586,15899
+bool PciHandleMM::exists(uint32 bus_, uint32 device_, uint32 function_)exists650,17786
+int32 PciHandleMM::read32(uint64 offset, uint32 * value)read32667,18106
+int32 PciHandleMM::write32(uint64 offset, uint32 value)write32674,18240
+int32 PciHandleMM::read64(uint64 offset, uint64 * value)read64681,18372
+int32 PciHandleMM::write64(uint64 offset, uint64 value)write64688,18506
+PciHandleMM::~PciHandleMM()~PciHandleMM695,18638
+
+realtime.cpp,1018
+#define HACK_TO_REMOVE_DUPLICATE_ERRORHACK_TO_REMOVE_DUPLICATE_ERROR16,1536
+inline double my_timestamp()my_timestamp33,1930
+long long int fib(long long int num)fib40,2070
+SystemCounterState before_sstate, after_sstate;before_sstate54,2293
+SystemCounterState before_sstate, after_sstate;after_sstate54,2293
+double before_time, after_time;before_time55,2341
+double before_time, after_time;after_time55,2341
+AsynchronCounterState counters;counters57,2374
+long long int all_fib = 0;all_fib59,2407
+void CPU_intensive_task()CPU_intensive_task62,2436
+void Memory_intensive_task(DS & ds)Memory_intensive_task70,2568
+double currentMemoryBandwidth()currentMemoryBandwidth77,2690
+void measure(DS & ds, size_t repeat, size_t nelements)measure83,2880
+struct TT147,5317
+    int key[1];key149,5328
+    int data[15];data150,5344
+    T() { }T152,5363
+    T(int a) { key[0] = a; }T153,5375
+    bool operator == (const T & k) constoperator ==155,5405
+int main(int argc, char * argv[])main163,5505
+
+Makefile,172
+CC=g++ -WallCC8,138
+OPT= -g -O3 OPT9,151
+UNAME:=$(shell uname)UNAME16,340
+LIB= -lpthread -lrtLIB19,386
+LIB= -lpthread -lPcmMsrLIB22,436
+LIB= -lpthreadLIB25,491
+
+cpucounterstest.cpp,868
+#define HACK_TO_REMOVE_DUPLICATE_ERROR HACK_TO_REMOVE_DUPLICATE_ERROR21,1738
+#define SIZE SIZE41,2130
+#define DELAY DELAY42,2154
+std::string unit_format(IntType n)unit_format47,2232
+double float_format(IntType n)float_format77,2870
+std::string temp_format(int32 t)temp_format82,2935
+void print_help(char * prog_name)print_help92,3112
+BOOL cleanup(DWORD)cleanup111,3887
+void cleanup(int s)cleanup117,3970
+void MySleep(int delay)MySleep125,4074
+void MySleepMs(int delay_ms)MySleepMs134,4185
+void MySystem(char * sysCmd)MySystem143,4310
+struct null_stream : public std::streambufnull_stream152,4546
+    void overflow(char) { }overflow154,4591
+void print_output(PCM * m,print_output157,4623
+void print_csv_header(PCM * m,print_csv_header411,19382
+void print_csv(PCM * m,print_csv632,26956
+int main(int argc, char * argv[])main845,37866
+
+width_extender.h,1840
+#define WIDTH_EXTENDER_HEADER_ WIDTH_EXTENDER_HEADER_17,1589
+class CounterWidthExtenderCounterWidthExtender35,1869
+   struct AbstractRawCounterAbstractRawCounter38,1906
+       virtual ~AbstractRawCounter() {}~AbstractRawCounter41,1981
+   struct MsrHandleCounter : public AbstractRawCounterMsrHandleCounter44,2028
+      MsrHandle * msr;msr46,2088
+      uint64 msr_addr;msr_addr47,2111
+      MsrHandleCounter(MsrHandle * msr_, uint64 msr_addr_): msr(msr_), msr_addr(msr_addr_) {}MsrHandleCounter48,2134
+      uint64 operator() ()operator ()49,2228
+   struct ClientImcReadsCounter : public AbstractRawCounterClientImcReadsCounter57,2366
+      ClientBW * clientBW;clientBW59,2431
+      ClientImcReadsCounter(ClientBW * clientBW_): clientBW(clientBW_) {}ClientImcReadsCounter60,2458
+      uint64 operator() () { return clientBW->getImcReads(); }operator ()61,2532
+   struct ClientImcWritesCounter : public AbstractRawCounterClientImcWritesCounter64,2602
+      ClientBW * clientBW;clientBW66,2668
+      ClientImcWritesCounter(ClientBW * clientBW_): clientBW(clientBW_) {}ClientImcWritesCounter67,2695
+      uint64 operator() () { return clientBW->getImcWrites(); }operator ()68,2770
+	HANDLE UpdateThread;UpdateThread74,2867
+	HANDLE CounterMutex;CounterMutex75,2889
+    pthread_t UpdateThread;UpdateThread77,2917
+    pthread_mutex_t CounterMutex;CounterMutex78,2945
+    AbstractRawCounter * raw_counter;raw_counter81,2987
+    uint64 extended_value;extended_value82,3025
+    uint64 last_raw_value;last_raw_value83,3052
+    uint64 internal_read()internal_read88,3184
+    CounterWidthExtender(AbstractRawCounter * raw_counter_): raw_counter(raw_counter_) CounterWidthExtender118,3842
+    ~CounterWidthExtender()~CounterWidthExtender131,4305
+    uint64 read() // read extended valueread144,4600
+
+cpuasynchcounter.h,1228
+#define CPUASYNCHCOUNTER_HEADERCPUASYNCHCOUNTER_HEADER19,1596
+#define DELAY DELAY30,1870
+class AsynchronCounterState {AsynchronCounterState37,1956
+    PCM * m;m38,1986
+    CoreCounterState * cstates1, * cstates2;cstates140,2000
+    CoreCounterState * cstates1, * cstates2;cstates240,2000
+    SocketCounterState * skstates1, * skstates2;skstates141,2045
+    SocketCounterState * skstates1, * skstates2;skstates241,2045
+    SystemCounterState sstate1, sstate2;sstate142,2094
+    SystemCounterState sstate1, sstate2;sstate242,2094
+    pthread_t UpdateThread;UpdateThread44,2136
+    pthread_mutex_t CounterMutex;CounterMutex45,2164
+    AsynchronCounterState()AsynchronCounterState53,2411
+    ~AsynchronCounterState()~AsynchronCounterState81,3415
+    uint32 getNumCores()getNumCores92,3666
+    uint32 getNumSockets()getNumSockets95,3725
+    uint32 getQPILinksPerSocket()getQPILinksPerSocket98,3788
+    uint32 getSocketId(uint32 c)getSocketId103,3877
+    T get(uint32 core)get109,4043
+    T getSocket(uint32 socket)getSocket118,4335
+    T getSocket(uint32 socket, uint32 param)getSocket127,4657
+    T getSystem()getSystem136,4972
+void * UpdateCounters(void * state)UpdateCounters145,5158
+
+types.h,24637
+#define CPUCounters_TYPES_HCPUCounters_TYPES_H17,1564
+#define COMPILE_FOR_WINDOWS_7COMPILE_FOR_WINDOWS_725,1791
+typedef unsigned long long uint64;uint6432,1900
+typedef signed long long int64;int6433,1935
+typedef unsigned int uint32;uint3234,1967
+typedef signed int int32;int3235,1996
+#define INST_RETIRED_ANY_ADDR INST_RETIRED_ANY_ADDR44,2223
+#define CPU_CLK_UNHALTED_THREAD_ADDR CPU_CLK_UNHALTED_THREAD_ADDR45,2271
+#define CPU_CLK_UNHALTED_REF_ADDR CPU_CLK_UNHALTED_REF_ADDR46,2319
+#define IA32_CR_PERF_GLOBAL_CTRL IA32_CR_PERF_GLOBAL_CTRL47,2367
+#define IA32_CR_FIXED_CTR_CTRL IA32_CR_FIXED_CTR_CTRL48,2415
+#define IA32_PERFEVTSEL0_ADDR IA32_PERFEVTSEL0_ADDR49,2463
+#define IA32_PERFEVTSEL1_ADDR IA32_PERFEVTSEL1_ADDR50,2511
+#define IA32_PERFEVTSEL2_ADDR IA32_PERFEVTSEL2_ADDR51,2579
+#define IA32_PERFEVTSEL3_ADDR IA32_PERFEVTSEL3_ADDR52,2647
+#define PERF_MAX_COUNTERS PERF_MAX_COUNTERS54,2716
+#define IA32_DEBUGCTL IA32_DEBUGCTL56,2761
+#define IA32_PMC0 IA32_PMC058,2810
+#define IA32_PMC1 IA32_PMC159,2857
+#define IA32_PMC2 IA32_PMC260,2908
+#define IA32_PMC3 IA32_PMC361,2959
+#define PLATFORM_INFO_ADDR PLATFORM_INFO_ADDR64,3065
+#define IA32_TIME_STAMP_COUNTER IA32_TIME_STAMP_COUNTER66,3113
+#define MEM_LOAD_RETIRED_L3_MISS_EVTNR MEM_LOAD_RETIRED_L3_MISS_EVTNR71,3210
+#define MEM_LOAD_RETIRED_L3_MISS_UMASK MEM_LOAD_RETIRED_L3_MISS_UMASK72,3257
+#define MEM_LOAD_RETIRED_L3_UNSHAREDHIT_EVTNR MEM_LOAD_RETIRED_L3_UNSHAREDHIT_EVTNR74,3305
+#define MEM_LOAD_RETIRED_L3_UNSHAREDHIT_UMASK MEM_LOAD_RETIRED_L3_UNSHAREDHIT_UMASK75,3360
+#define MEM_LOAD_RETIRED_L2_HITM_EVTNR MEM_LOAD_RETIRED_L2_HITM_EVTNR77,3416
+#define MEM_LOAD_RETIRED_L2_HITM_UMASK MEM_LOAD_RETIRED_L2_HITM_UMASK78,3463
+#define MEM_LOAD_RETIRED_L2_HIT_EVTNR MEM_LOAD_RETIRED_L2_HIT_EVTNR80,3511
+#define MEM_LOAD_RETIRED_L2_HIT_UMASK MEM_LOAD_RETIRED_L2_HIT_UMASK81,3558
+#define MEM_LOAD_UOPS_MISC_RETIRED_LLC_MISS_EVTNR MEM_LOAD_UOPS_MISC_RETIRED_LLC_MISS_EVTNR85,3638
+#define MEM_LOAD_UOPS_MISC_RETIRED_LLC_MISS_UMASK MEM_LOAD_UOPS_MISC_RETIRED_LLC_MISS_UMASK86,3695
+#define MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_NONE_EVTNR MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_NONE_EVTNR88,3753
+#define MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_NONE_UMASK MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_NONE_UMASK89,3814
+#define MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_HITM_EVTNR MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_HITM_EVTNR91,3876
+#define MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_HITM_UMASK MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_HITM_UMASK92,3937
+#define MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_EVTNR MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_EVTNR94,3999
+#define MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_UMASK MEM_LOAD_UOPS_LLC_HIT_RETIRED_XSNP_UMASK95,4055
+#define MEM_LOAD_UOPS_RETIRED_L2_HIT_EVTNR MEM_LOAD_UOPS_RETIRED_L2_HIT_EVTNR97,4112
+#define MEM_LOAD_UOPS_RETIRED_L2_HIT_UMASK MEM_LOAD_UOPS_RETIRED_L2_HIT_UMASK98,4162
+#define ARCH_LLC_REFERENCE_EVTNR ARCH_LLC_REFERENCE_EVTNR102,4246
+#define ARCH_LLC_REFERENCE_UMASK ARCH_LLC_REFERENCE_UMASK103,4293
+#define ARCH_LLC_MISS_EVTNR ARCH_LLC_MISS_EVTNR105,4341
+#define ARCH_LLC_MISS_UMASK ARCH_LLC_MISS_UMASK106,4380
+#define ATOM_MEM_LOAD_RETIRED_L2_HIT_EVTNR ATOM_MEM_LOAD_RETIRED_L2_HIT_EVTNR110,4444
+#define ATOM_MEM_LOAD_RETIRED_L2_HIT_UMASK ATOM_MEM_LOAD_RETIRED_L2_HIT_UMASK111,4496
+#define ATOM_MEM_LOAD_RETIRED_L2_MISS_EVTNR ATOM_MEM_LOAD_RETIRED_L2_MISS_EVTNR113,4549
+#define ATOM_MEM_LOAD_RETIRED_L2_MISS_UMASK ATOM_MEM_LOAD_RETIRED_L2_MISS_UMASK114,4602
+#define ATOM_MEM_LOAD_RETIRED_L2_HIT_EVTNR ATOM_MEM_LOAD_RETIRED_L2_HIT_EVTNR116,4656
+#define ATOM_MEM_LOAD_RETIRED_L2_HIT_UMASK ATOM_MEM_LOAD_RETIRED_L2_HIT_UMASK117,4708
+#define ATOM_MEM_LOAD_RETIRED_L2_MISS_EVTNR ATOM_MEM_LOAD_RETIRED_L2_MISS_EVTNR119,4761
+#define ATOM_MEM_LOAD_RETIRED_L2_MISS_UMASK ATOM_MEM_LOAD_RETIRED_L2_MISS_UMASK120,4814
+#define ATOM_MEM_LOAD_RETIRED_L2_HIT_EVTNR ATOM_MEM_LOAD_RETIRED_L2_HIT_EVTNR122,4868
+#define ATOM_MEM_LOAD_RETIRED_L2_HIT_UMASK ATOM_MEM_LOAD_RETIRED_L2_HIT_UMASK123,4920
+#define ATOM_MEM_LOAD_RETIRED_L2_MISS_EVTNR ATOM_MEM_LOAD_RETIRED_L2_MISS_EVTNR125,4973
+#define ATOM_MEM_LOAD_RETIRED_L2_MISS_UMASK ATOM_MEM_LOAD_RETIRED_L2_MISS_UMASK126,5026
+#define MSR_UNCORE_PERF_GLOBAL_CTRL_ADDR MSR_UNCORE_PERF_GLOBAL_CTRL_ADDR133,5181
+#define MSR_UNCORE_PERFEVTSEL0_ADDR MSR_UNCORE_PERFEVTSEL0_ADDR135,5238
+#define MSR_UNCORE_PERFEVTSEL1_ADDR MSR_UNCORE_PERFEVTSEL1_ADDR136,5294
+#define MSR_UNCORE_PERFEVTSEL2_ADDR MSR_UNCORE_PERFEVTSEL2_ADDR137,5376
+#define MSR_UNCORE_PERFEVTSEL3_ADDR MSR_UNCORE_PERFEVTSEL3_ADDR138,5458
+#define MSR_UNCORE_PERFEVTSEL4_ADDR MSR_UNCORE_PERFEVTSEL4_ADDR139,5540
+#define MSR_UNCORE_PERFEVTSEL5_ADDR MSR_UNCORE_PERFEVTSEL5_ADDR140,5622
+#define MSR_UNCORE_PERFEVTSEL6_ADDR MSR_UNCORE_PERFEVTSEL6_ADDR141,5704
+#define MSR_UNCORE_PERFEVTSEL7_ADDR MSR_UNCORE_PERFEVTSEL7_ADDR142,5786
+#define MSR_UNCORE_PMC0 MSR_UNCORE_PMC0145,5870
+#define MSR_UNCORE_PMC1 MSR_UNCORE_PMC1146,5926
+#define MSR_UNCORE_PMC2 MSR_UNCORE_PMC2147,5996
+#define MSR_UNCORE_PMC3 MSR_UNCORE_PMC3148,6066
+#define MSR_UNCORE_PMC4 MSR_UNCORE_PMC4149,6136
+#define MSR_UNCORE_PMC5 MSR_UNCORE_PMC5150,6206
+#define MSR_UNCORE_PMC6 MSR_UNCORE_PMC6151,6276
+#define MSR_UNCORE_PMC7 MSR_UNCORE_PMC7152,6346
+#define UNC_QMC_WRITES_FULL_ANY_EVTNR UNC_QMC_WRITES_FULL_ANY_EVTNR156,6438
+#define UNC_QMC_WRITES_FULL_ANY_UMASK UNC_QMC_WRITES_FULL_ANY_UMASK157,6493
+#define UNC_QMC_NORMAL_READS_ANY_EVTNR UNC_QMC_NORMAL_READS_ANY_EVTNR159,6549
+#define UNC_QMC_NORMAL_READS_ANY_UMASK UNC_QMC_NORMAL_READS_ANY_UMASK160,6604
+#define UNC_QHL_REQUESTS_EVTNR UNC_QHL_REQUESTS_EVTNR162,6660
+#define UNC_QHL_REQUESTS_IOH_READS_UMASK UNC_QHL_REQUESTS_IOH_READS_UMASK164,6716
+#define UNC_QHL_REQUESTS_IOH_WRITES_UMASK UNC_QHL_REQUESTS_IOH_WRITES_UMASK165,6771
+#define UNC_QHL_REQUESTS_REMOTE_READS_UMASK UNC_QHL_REQUESTS_REMOTE_READS_UMASK166,6826
+#define UNC_QHL_REQUESTS_REMOTE_WRITES_UMASK UNC_QHL_REQUESTS_REMOTE_WRITES_UMASK167,6881
+#define UNC_QHL_REQUESTS_LOCAL_READS_UMASK UNC_QHL_REQUESTS_LOCAL_READS_UMASK168,6936
+#define UNC_QHL_REQUESTS_LOCAL_WRITES_UMASK UNC_QHL_REQUESTS_LOCAL_WRITES_UMASK169,6991
+#define U_MSR_PMON_GLOBAL_CTL U_MSR_PMON_GLOBAL_CTL174,7077
+#define MB0_MSR_PERF_GLOBAL_CTL MB0_MSR_PERF_GLOBAL_CTL176,7135
+#define MB0_MSR_PMU_CNT_0 MB0_MSR_PMU_CNT_0177,7192
+#define MB0_MSR_PMU_CNT_CTL_0 MB0_MSR_PMU_CNT_CTL_0178,7249
+#define MB0_MSR_PMU_CNT_1 MB0_MSR_PMU_CNT_1179,7306
+#define MB0_MSR_PMU_CNT_CTL_1 MB0_MSR_PMU_CNT_CTL_1180,7363
+#define MB0_MSR_PMU_ZDP_CTL_FVC MB0_MSR_PMU_ZDP_CTL_FVC181,7420
+#define MB1_MSR_PERF_GLOBAL_CTL MB1_MSR_PERF_GLOBAL_CTL184,7479
+#define MB1_MSR_PMU_CNT_0 MB1_MSR_PMU_CNT_0185,7536
+#define MB1_MSR_PMU_CNT_CTL_0 MB1_MSR_PMU_CNT_CTL_0186,7593
+#define MB1_MSR_PMU_CNT_1 MB1_MSR_PMU_CNT_1187,7650
+#define MB1_MSR_PMU_CNT_CTL_1 MB1_MSR_PMU_CNT_CTL_1188,7707
+#define MB1_MSR_PMU_ZDP_CTL_FVC MB1_MSR_PMU_ZDP_CTL_FVC189,7764
+#define BB0_MSR_PERF_GLOBAL_CTL BB0_MSR_PERF_GLOBAL_CTL191,7822
+#define BB0_MSR_PERF_CNT_1 BB0_MSR_PERF_CNT_1192,7879
+#define BB0_MSR_PERF_CNT_CTL_1 BB0_MSR_PERF_CNT_CTL_1193,7936
+#define BB1_MSR_PERF_GLOBAL_CTL BB1_MSR_PERF_GLOBAL_CTL195,7994
+#define BB1_MSR_PERF_CNT_1 BB1_MSR_PERF_CNT_1196,8051
+#define BB1_MSR_PERF_CNT_CTL_1 BB1_MSR_PERF_CNT_CTL_1197,8108
+#define R_MSR_PMON_CTL0 R_MSR_PMON_CTL0199,8166
+#define R_MSR_PMON_CTR0 R_MSR_PMON_CTR0200,8199
+#define R_MSR_PMON_CTL1 R_MSR_PMON_CTL1201,8232
+#define R_MSR_PMON_CTR1 R_MSR_PMON_CTR1202,8265
+#define R_MSR_PMON_CTL2 R_MSR_PMON_CTL2203,8298
+#define R_MSR_PMON_CTR2 R_MSR_PMON_CTR2204,8331
+#define R_MSR_PMON_CTL3 R_MSR_PMON_CTL3205,8364
+#define R_MSR_PMON_CTR3 R_MSR_PMON_CTR3206,8397
+#define R_MSR_PMON_CTL4 R_MSR_PMON_CTL4207,8430
+#define R_MSR_PMON_CTR4 R_MSR_PMON_CTR4208,8463
+#define R_MSR_PMON_CTL5 R_MSR_PMON_CTL5209,8496
+#define R_MSR_PMON_CTR5 R_MSR_PMON_CTR5210,8529
+#define R_MSR_PMON_CTL6 R_MSR_PMON_CTL6211,8562
+#define R_MSR_PMON_CTR6 R_MSR_PMON_CTR6212,8595
+#define R_MSR_PMON_CTL7 R_MSR_PMON_CTL7213,8628
+#define R_MSR_PMON_CTR7 R_MSR_PMON_CTR7214,8661
+#define R_MSR_PMON_CTL8 R_MSR_PMON_CTL8215,8694
+#define R_MSR_PMON_CTR8 R_MSR_PMON_CTR8216,8727
+#define R_MSR_PMON_CTL9 R_MSR_PMON_CTL9217,8760
+#define R_MSR_PMON_CTR9 R_MSR_PMON_CTR9218,8793
+#define R_MSR_PMON_CTL10 R_MSR_PMON_CTL10219,8826
+#define R_MSR_PMON_CTR10 R_MSR_PMON_CTR10220,8860
+#define R_MSR_PMON_CTL11 R_MSR_PMON_CTL11221,8894
+#define R_MSR_PMON_CTR11 R_MSR_PMON_CTR11222,8928
+#define R_MSR_PMON_CTL12 R_MSR_PMON_CTL12223,8962
+#define R_MSR_PMON_CTR12 R_MSR_PMON_CTR12224,8996
+#define R_MSR_PMON_CTL13 R_MSR_PMON_CTL13225,9030
+#define R_MSR_PMON_CTR13 R_MSR_PMON_CTR13226,9064
+#define R_MSR_PMON_CTL14 R_MSR_PMON_CTL14227,9098
+#define R_MSR_PMON_CTR14 R_MSR_PMON_CTR14228,9132
+#define R_MSR_PMON_CTL15 R_MSR_PMON_CTL15229,9166
+#define R_MSR_PMON_CTR15 R_MSR_PMON_CTR15230,9200
+#define R_MSR_PORT0_IPERF_CFG0 R_MSR_PORT0_IPERF_CFG0232,9235
+#define R_MSR_PORT1_IPERF_CFG0 R_MSR_PORT1_IPERF_CFG0233,9275
+#define R_MSR_PORT2_IPERF_CFG0 R_MSR_PORT2_IPERF_CFG0234,9315
+#define R_MSR_PORT3_IPERF_CFG0 R_MSR_PORT3_IPERF_CFG0235,9355
+#define R_MSR_PORT4_IPERF_CFG0 R_MSR_PORT4_IPERF_CFG0236,9395
+#define R_MSR_PORT5_IPERF_CFG0 R_MSR_PORT5_IPERF_CFG0237,9435
+#define R_MSR_PORT6_IPERF_CFG0 R_MSR_PORT6_IPERF_CFG0238,9475
+#define R_MSR_PORT7_IPERF_CFG0 R_MSR_PORT7_IPERF_CFG0239,9515
+#define R_MSR_PORT0_IPERF_CFG1 R_MSR_PORT0_IPERF_CFG1241,9556
+#define R_MSR_PORT1_IPERF_CFG1 R_MSR_PORT1_IPERF_CFG1242,9596
+#define R_MSR_PORT2_IPERF_CFG1 R_MSR_PORT2_IPERF_CFG1243,9636
+#define R_MSR_PORT3_IPERF_CFG1 R_MSR_PORT3_IPERF_CFG1244,9676
+#define R_MSR_PORT4_IPERF_CFG1 R_MSR_PORT4_IPERF_CFG1245,9716
+#define R_MSR_PORT5_IPERF_CFG1 R_MSR_PORT5_IPERF_CFG1246,9756
+#define R_MSR_PORT6_IPERF_CFG1 R_MSR_PORT6_IPERF_CFG1247,9796
+#define R_MSR_PORT7_IPERF_CFG1 R_MSR_PORT7_IPERF_CFG1248,9836
+#define R_MSR_PMON_GLOBAL_CTL_7_0 R_MSR_PMON_GLOBAL_CTL_7_0250,9877
+#define R_MSR_PMON_GLOBAL_CTL_15_8 R_MSR_PMON_GLOBAL_CTL_15_8251,9920
+#define W_MSR_PMON_GLOBAL_CTL W_MSR_PMON_GLOBAL_CTL253,9965
+#define W_MSR_PMON_FIXED_CTR_CTL W_MSR_PMON_FIXED_CTR_CTL254,10006
+#define W_MSR_PMON_FIXED_CTR W_MSR_PMON_FIXED_CTR255,10047
+#define CB7_CR_C_MSR_PMON_CTR_0 CB7_CR_C_MSR_PMON_CTR_0258,10102
+#define CB3_CR_C_MSR_PMON_CTR_0 CB3_CR_C_MSR_PMON_CTR_0259,10142
+#define CB5_CR_C_MSR_PMON_CTR_0 CB5_CR_C_MSR_PMON_CTR_0260,10182
+#define CB1_CR_C_MSR_PMON_CTR_0 CB1_CR_C_MSR_PMON_CTR_0261,10222
+#define CB6_CR_C_MSR_PMON_CTR_0 CB6_CR_C_MSR_PMON_CTR_0262,10262
+#define CB2_CR_C_MSR_PMON_CTR_0 CB2_CR_C_MSR_PMON_CTR_0263,10302
+#define CB4_CR_C_MSR_PMON_CTR_0 CB4_CR_C_MSR_PMON_CTR_0264,10342
+#define CB0_CR_C_MSR_PMON_CTR_0 CB0_CR_C_MSR_PMON_CTR_0265,10382
+#define CB7_CR_C_MSR_PMON_EVT_SEL_0 CB7_CR_C_MSR_PMON_EVT_SEL_0268,10424
+#define CB3_CR_C_MSR_PMON_EVT_SEL_0 CB3_CR_C_MSR_PMON_EVT_SEL_0269,10468
+#define CB5_CR_C_MSR_PMON_EVT_SEL_0 CB5_CR_C_MSR_PMON_EVT_SEL_0270,10512
+#define CB1_CR_C_MSR_PMON_EVT_SEL_0 CB1_CR_C_MSR_PMON_EVT_SEL_0271,10556
+#define CB6_CR_C_MSR_PMON_EVT_SEL_0 CB6_CR_C_MSR_PMON_EVT_SEL_0272,10600
+#define CB2_CR_C_MSR_PMON_EVT_SEL_0 CB2_CR_C_MSR_PMON_EVT_SEL_0273,10644
+#define CB4_CR_C_MSR_PMON_EVT_SEL_0 CB4_CR_C_MSR_PMON_EVT_SEL_0274,10688
+#define CB0_CR_C_MSR_PMON_EVT_SEL_0 CB0_CR_C_MSR_PMON_EVT_SEL_0275,10732
+#define CB7_CR_C_MSR_PMON_GLOBAL_STATUS CB7_CR_C_MSR_PMON_GLOBAL_STATUS278,10778
+#define CB3_CR_C_MSR_PMON_GLOBAL_STATUS CB3_CR_C_MSR_PMON_GLOBAL_STATUS279,10826
+#define CB5_CR_C_MSR_PMON_GLOBAL_STATUS CB5_CR_C_MSR_PMON_GLOBAL_STATUS280,10874
+#define CB1_CR_C_MSR_PMON_GLOBAL_STATUS CB1_CR_C_MSR_PMON_GLOBAL_STATUS281,10922
+#define CB6_CR_C_MSR_PMON_GLOBAL_STATUS CB6_CR_C_MSR_PMON_GLOBAL_STATUS282,10970
+#define CB2_CR_C_MSR_PMON_GLOBAL_STATUS CB2_CR_C_MSR_PMON_GLOBAL_STATUS283,11018
+#define CB4_CR_C_MSR_PMON_GLOBAL_STATUS CB4_CR_C_MSR_PMON_GLOBAL_STATUS284,11066
+#define CB0_CR_C_MSR_PMON_GLOBAL_STATUS CB0_CR_C_MSR_PMON_GLOBAL_STATUS285,11114
+#define CB7_CR_C_MSR_PMON_GLOBAL_CTL CB7_CR_C_MSR_PMON_GLOBAL_CTL287,11163
+#define CB3_CR_C_MSR_PMON_GLOBAL_CTL CB3_CR_C_MSR_PMON_GLOBAL_CTL288,11208
+#define CB5_CR_C_MSR_PMON_GLOBAL_CTL CB5_CR_C_MSR_PMON_GLOBAL_CTL289,11253
+#define CB1_CR_C_MSR_PMON_GLOBAL_CTL CB1_CR_C_MSR_PMON_GLOBAL_CTL290,11298
+#define CB6_CR_C_MSR_PMON_GLOBAL_CTL CB6_CR_C_MSR_PMON_GLOBAL_CTL291,11343
+#define CB2_CR_C_MSR_PMON_GLOBAL_CTL CB2_CR_C_MSR_PMON_GLOBAL_CTL292,11388
+#define CB4_CR_C_MSR_PMON_GLOBAL_CTL CB4_CR_C_MSR_PMON_GLOBAL_CTL293,11433
+#define CB0_CR_C_MSR_PMON_GLOBAL_CTL CB0_CR_C_MSR_PMON_GLOBAL_CTL294,11478
+struct EventSelectRegisterEventSelectRegister305,11836
+            uint64 event_select : 8;event_select311,11906
+            uint64 umask : 8;umask312,11943
+            uint64 usr : 1;usr313,11973
+            uint64 os : 1;os314,12001
+            uint64 edge : 1;edge315,12028
+            uint64 pin_control : 1;pin_control316,12057
+            uint64 apic_int : 1;apic_int317,12093
+            uint64 any_thread : 1;any_thread318,12126
+            uint64 enable : 1;enable319,12161
+            uint64 invert : 1;invert320,12192
+            uint64 cmask : 8;cmask321,12223
+            uint64 reserved1 : 32;reserved1322,12253
+        } fields;fields323,12288
+        uint64 value;value324,12306
+struct FixedEventControlRegisterFixedEventControlRegister336,12647
+            uint64 os0 : 1;os0343,12743
+            uint64 usr0 : 1;usr0344,12771
+            uint64 any_thread0 : 1;any_thread0345,12800
+            uint64 enable_pmi0 : 1;enable_pmi0346,12836
+            uint64 os1 : 1;os1348,12892
+            uint64 usr1 : 1;usr1349,12920
+            uint64 any_thread1 : 1;any_thread1350,12949
+            uint64 enable_pmi1 : 1;enable_pmi1351,12985
+            uint64 os2 : 1;os2353,13041
+            uint64 usr2 : 1;usr2354,13069
+            uint64 any_thread2 : 1;any_thread2355,13098
+            uint64 enable_pmi2 : 1;enable_pmi2356,13134
+            uint64 reserved1 : 52;reserved1358,13171
+        } fields;fields359,13206
+        uint64 value;value360,13224
+inline std::ostream & operator << (std::ostream & o, const FixedEventControlRegister & reg)operator <<364,13257
+struct UncoreEventSelectRegisterUncoreEventSelectRegister393,14417
+            uint64 event_select : 8;event_select399,14493
+            uint64 umask : 8;umask400,14530
+            uint64 reserved1 : 1;reserved1401,14560
+            uint64 occ_ctr_rst : 1;occ_ctr_rst402,14594
+            uint64 edge : 1;edge403,14630
+            uint64 reserved2 : 1;reserved2404,14659
+            uint64 enable_pmi : 1;enable_pmi405,14693
+            uint64 reserved3 : 1;reserved3406,14728
+            uint64 enable : 1;enable407,14762
+            uint64 invert : 1;invert408,14793
+            uint64 cmask : 8;cmask409,14824
+            uint64 reservedx : 32;reservedx410,14854
+        } fields;fields411,14889
+        uint64 value;value412,14907
+struct BecktonUncorePMUZDPCTLFVCRegisterBecktonUncorePMUZDPCTLFVCRegister421,15155
+            uint64 fvid : 5;fvid427,15239
+            uint64 bcmd : 3;bcmd428,15268
+            uint64 resp : 3;resp429,15297
+            uint64 evnt0 : 3;evnt0430,15326
+            uint64 evnt1 : 3;evnt1431,15356
+            uint64 evnt2 : 3;evnt2432,15386
+            uint64 evnt3 : 3;evnt3433,15416
+            uint64 pbox_init_err : 1;pbox_init_err434,15446
+        } fields; // nehalem-ex versionfields435,15484
+            uint64 fvid : 6;fvid438,15549
+            uint64 bcmd : 3;bcmd439,15578
+            uint64 resp : 3;resp440,15607
+            uint64 evnt0 : 3;evnt0441,15636
+            uint64 evnt1 : 3;evnt1442,15666
+            uint64 evnt2 : 3;evnt2443,15696
+            uint64 evnt3 : 3;evnt3444,15726
+            uint64 pbox_init_err : 1;pbox_init_err445,15756
+        } fields_wsm; // westmere-ex versionfields_wsm446,15794
+        uint64 value;value447,15839
+struct BecktonUncorePMUCNTCTLRegisterBecktonUncorePMUCNTCTLRegister456,16088
+            uint64 en : 1;en462,16169
+            uint64 pmi_en : 1;pmi_en463,16196
+            uint64 count_mode : 2;count_mode464,16227
+            uint64 storage_mode : 2;storage_mode465,16262
+            uint64 wrap_mode : 1;wrap_mode466,16299
+            uint64 flag_mode : 1;flag_mode467,16333
+            uint64 rsv1 : 1;rsv1468,16367
+            uint64 inc_sel : 5;inc_sel469,16396
+            uint64 rsv2 : 5;rsv2470,16428
+            uint64 set_flag_sel : 3;set_flag_sel471,16457
+        } fields;fields472,16494
+        uint64 value;value473,16512
+#define MSR_PKG_ENERGY_STATUS MSR_PKG_ENERGY_STATUS480,16588
+#define MSR_RAPL_POWER_UNIT MSR_RAPL_POWER_UNIT481,16626
+#define MSR_PKG_POWER_INFO MSR_PKG_POWER_INFO482,16664
+#define MC_CH0_REGISTER_DEV MC_CH0_REGISTER_DEV486,16727
+#define MC_CH1_REGISTER_DEV MC_CH1_REGISTER_DEV487,16760
+#define MC_CH2_REGISTER_DEV MC_CH2_REGISTER_DEV488,16793
+#define MC_CH3_REGISTER_DEV MC_CH3_REGISTER_DEV489,16826
+#define MC_CH0_REGISTER_FUNC MC_CH0_REGISTER_FUNC490,16859
+#define MC_CH1_REGISTER_FUNC MC_CH1_REGISTER_FUNC491,16892
+#define MC_CH2_REGISTER_FUNC MC_CH2_REGISTER_FUNC492,16925
+#define MC_CH3_REGISTER_FUNC MC_CH3_REGISTER_FUNC493,16958
+#define MC_CH_PCI_PMON_BOX_CTL MC_CH_PCI_PMON_BOX_CTL495,16992
+#define MC_CH_PCI_PMON_BOX_CTL_RST_CONTROL MC_CH_PCI_PMON_BOX_CTL_RST_CONTROL497,17032
+#define MC_CH_PCI_PMON_BOX_CTL_RST_COUNTERS MC_CH_PCI_PMON_BOX_CTL_RST_COUNTERS498,17083
+#define MC_CH_PCI_PMON_BOX_CTL_FRZ MC_CH_PCI_PMON_BOX_CTL_FRZ499,17135
+#define MC_CH_PCI_PMON_BOX_CTL_FRZ_EN MC_CH_PCI_PMON_BOX_CTL_FRZ_EN500,17178
+#define MC_CH_PCI_PMON_FIXED_CTL MC_CH_PCI_PMON_FIXED_CTL502,17226
+#define MC_CH_PCI_PMON_FIXED_CTL_RST MC_CH_PCI_PMON_FIXED_CTL_RST504,17268
+#define MC_CH_PCI_PMON_FIXED_CTL_EN MC_CH_PCI_PMON_FIXED_CTL_EN505,17314
+#define MC_CH_PCI_PMON_CTL3 MC_CH_PCI_PMON_CTL3507,17360
+#define MC_CH_PCI_PMON_CTL2 MC_CH_PCI_PMON_CTL2508,17396
+#define MC_CH_PCI_PMON_CTL1 MC_CH_PCI_PMON_CTL1509,17432
+#define MC_CH_PCI_PMON_CTL0 MC_CH_PCI_PMON_CTL0510,17468
+#define MC_CH_PCI_PMON_CTL_EVENT(MC_CH_PCI_PMON_CTL_EVENT512,17505
+#define MC_CH_PCI_PMON_CTL_UMASK(MC_CH_PCI_PMON_CTL_UMASK513,17548
+#define MC_CH_PCI_PMON_CTL_RST MC_CH_PCI_PMON_CTL_RST514,17591
+#define MC_CH_PCI_PMON_CTL_EDGE_DET MC_CH_PCI_PMON_CTL_EDGE_DET515,17630
+#define MC_CH_PCI_PMON_CTL_EN MC_CH_PCI_PMON_CTL_EN516,17674
+#define MC_CH_PCI_PMON_CTL_INVERT MC_CH_PCI_PMON_CTL_INVERT517,17712
+#define MC_CH_PCI_PMON_CTL_THRESH(MC_CH_PCI_PMON_CTL_THRESH518,17754
+#define MC_CH_PCI_PMON_FIXED_CTR MC_CH_PCI_PMON_FIXED_CTR520,17802
+#define MC_CH_PCI_PMON_CTR3 MC_CH_PCI_PMON_CTR3522,17844
+#define MC_CH_PCI_PMON_CTR2 MC_CH_PCI_PMON_CTR2523,17880
+#define MC_CH_PCI_PMON_CTR1 MC_CH_PCI_PMON_CTR1524,17916
+#define MC_CH_PCI_PMON_CTR0 MC_CH_PCI_PMON_CTR0525,17952
+#define QPI_PORT0_REGISTER_DEV QPI_PORT0_REGISTER_DEV527,17989
+#define QPI_PORT0_REGISTER_FUNC QPI_PORT0_REGISTER_FUNC528,18025
+#define QPI_PORT1_REGISTER_DEV QPI_PORT1_REGISTER_DEV529,18061
+#define QPI_PORT1_REGISTER_FUNC QPI_PORT1_REGISTER_FUNC530,18097
+#define QPI_PORT0_MISC_REGISTER_DEV QPI_PORT0_MISC_REGISTER_DEV532,18134
+#define QPI_PORT0_MISC_REGISTER_FUNC QPI_PORT0_MISC_REGISTER_FUNC533,18175
+#define Q_P_PCI_PMON_BOX_CTL Q_P_PCI_PMON_BOX_CTL535,18217
+#define Q_P_PCI_PMON_CTL3 Q_P_PCI_PMON_CTL3537,18255
+#define Q_P_PCI_PMON_CTL2 Q_P_PCI_PMON_CTL2538,18289
+#define Q_P_PCI_PMON_CTL1 Q_P_PCI_PMON_CTL1539,18323
+#define Q_P_PCI_PMON_CTL0 Q_P_PCI_PMON_CTL0540,18357
+#define Q_P_PCI_PMON_CTR3 Q_P_PCI_PMON_CTR3542,18392
+#define Q_P_PCI_PMON_CTR2 Q_P_PCI_PMON_CTR2543,18426
+#define Q_P_PCI_PMON_CTR1 Q_P_PCI_PMON_CTR1544,18460
+#define Q_P_PCI_PMON_CTR0 Q_P_PCI_PMON_CTR0545,18494
+#define Q_P_PCI_PMON_BOX_CTL_RST_CONTROL Q_P_PCI_PMON_BOX_CTL_RST_CONTROL547,18529
+#define Q_P_PCI_PMON_BOX_CTL_RST_COUNTERS Q_P_PCI_PMON_BOX_CTL_RST_COUNTERS548,18579
+#define Q_P_PCI_PMON_BOX_CTL_RST_FRZ Q_P_PCI_PMON_BOX_CTL_RST_FRZ549,18629
+#define Q_P_PCI_PMON_BOX_CTL_RST_FRZ_EN Q_P_PCI_PMON_BOX_CTL_RST_FRZ_EN550,18674
+#define Q_P_PCI_PMON_CTL_EVENT(Q_P_PCI_PMON_CTL_EVENT552,18724
+#define Q_P_PCI_PMON_CTL_UMASK(Q_P_PCI_PMON_CTL_UMASK553,18766
+#define Q_P_PCI_PMON_CTL_RST Q_P_PCI_PMON_CTL_RST554,18808
+#define Q_P_PCI_PMON_CTL_EDGE_DET Q_P_PCI_PMON_CTL_EDGE_DET555,18847
+#define Q_P_PCI_PMON_CTL_EVENT_EXT Q_P_PCI_PMON_CTL_EVENT_EXT556,18890
+#define Q_P_PCI_PMON_CTL_EN Q_P_PCI_PMON_CTL_EN557,18934
+#define Q_P_PCI_PMON_CTL_INVERT Q_P_PCI_PMON_CTL_INVERT558,18972
+#define Q_P_PCI_PMON_CTL_THRESH(Q_P_PCI_PMON_CTL_THRESH559,19013
+#define QPI_RATE_STATUS QPI_RATE_STATUS561,19060
+#define PCU_MSR_PMON_CTR3 PCU_MSR_PMON_CTR3563,19093
+#define PCU_MSR_PMON_CTR2 PCU_MSR_PMON_CTR2564,19128
+#define PCU_MSR_PMON_CTR1 PCU_MSR_PMON_CTR1565,19163
+#define PCU_MSR_PMON_CTR0 PCU_MSR_PMON_CTR0566,19198
+#define PCU_MSR_PMON_BOX_FILTER PCU_MSR_PMON_BOX_FILTER568,19234
+#define PCU_MSR_PMON_BOX_FILTER_BAND_0(PCU_MSR_PMON_BOX_FILTER_BAND_0570,19276
+#define PCU_MSR_PMON_BOX_FILTER_BAND_1(PCU_MSR_PMON_BOX_FILTER_BAND_1571,19325
+#define PCU_MSR_PMON_BOX_FILTER_BAND_2(PCU_MSR_PMON_BOX_FILTER_BAND_2572,19374
+#define PCU_MSR_PMON_BOX_FILTER_BAND_3(PCU_MSR_PMON_BOX_FILTER_BAND_3573,19424
+#define PCU_MSR_PMON_CTL3 PCU_MSR_PMON_CTL3575,19475
+#define PCU_MSR_PMON_CTL2 PCU_MSR_PMON_CTL2576,19510
+#define PCU_MSR_PMON_CTL1 PCU_MSR_PMON_CTL1577,19545
+#define PCU_MSR_PMON_CTL0 PCU_MSR_PMON_CTL0578,19580
+#define PCU_MSR_PMON_BOX_CTL PCU_MSR_PMON_BOX_CTL580,19616
+#define PCU_MSR_PMON_BOX_CTL_RST_CONTROL PCU_MSR_PMON_BOX_CTL_RST_CONTROL582,19655
+#define PCU_MSR_PMON_BOX_CTL_RST_COUNTERS PCU_MSR_PMON_BOX_CTL_RST_COUNTERS583,19703
+#define PCU_MSR_PMON_BOX_CTL_FRZ PCU_MSR_PMON_BOX_CTL_FRZ584,19752
+#define PCU_MSR_PMON_BOX_CTL_FRZ_EN PCU_MSR_PMON_BOX_CTL_FRZ_EN585,19792
+#define PCU_MSR_PMON_CTL_EVENT(PCU_MSR_PMON_CTL_EVENT587,19837
+#define PCU_MSR_PMON_CTL_OCC_SEL(PCU_MSR_PMON_CTL_OCC_SEL588,19878
+#define PCU_MSR_PMON_CTL_RST	PCU_MSR_PMON_CTL_RST589,19922
+#define PCU_MSR_PMON_CTL_EDGE_DET PCU_MSR_PMON_CTL_EDGE_DET590,19959
+#define PCU_MSR_PMON_CTL_EXTRA_SEL PCU_MSR_PMON_CTL_EXTRA_SEL591,20001
+#define PCU_MSR_PMON_CTL_EN	PCU_MSR_PMON_CTL_EN592,20044
+#define PCU_MSR_PMON_CTL_INVERT PCU_MSR_PMON_CTL_INVERT593,20080
+#define PCU_MSR_PMON_CTL_THRESH(PCU_MSR_PMON_CTL_THRESH594,20120
+#define PCU_MSR_PMON_CTL_OCC_INVERT PCU_MSR_PMON_CTL_OCC_INVERT595,20165
+#define PCU_MSR_PMON_CTL_OCC_EDGE_DET PCU_MSR_PMON_CTL_OCC_EDGE_DET596,20213
+#define MSR_PACKAGE_THERM_STATUS MSR_PACKAGE_THERM_STATUS598,20264
+#define MSR_IA32_THERM_STATUS MSR_IA32_THERM_STATUS599,20306
+#define PCM_INVALID_THERMAL_HEADROOM PCM_INVALID_THERMAL_HEADROOM600,20348
+#define MSR_DRAM_ENERGY_STATUS MSR_DRAM_ENERGY_STATUS602,20424
+#define MSR_PKG_C2_RESIDENCY MSR_PKG_C2_RESIDENCY604,20465
+#define MSR_PKG_C3_RESIDENCY MSR_PKG_C3_RESIDENCY605,20505
+#define MSR_PKG_C6_RESIDENCY MSR_PKG_C6_RESIDENCY606,20545
+#define MSR_PKG_C7_RESIDENCY MSR_PKG_C7_RESIDENCY607,20585
+#define MSR_CORE_C3_RESIDENCY MSR_CORE_C3_RESIDENCY608,20625
+#define MSR_CORE_C6_RESIDENCY MSR_CORE_C6_RESIDENCY609,20665
+#define MSR_CORE_C7_RESIDENCY MSR_CORE_C7_RESIDENCY610,20705
+union cvt_dscvt_ds615,20838
+	UINT64 ui64;ui64617,20853
+		DWORD low;low620,20878
+		DWORD high;high621,20891
+	} ui32;ui32622,20905
+struct MCFGRecordMCFGRecord626,20925
+    unsigned long long baseAddress;baseAddress628,20945
+    unsigned short PCISegmentGroupNumber;PCISegmentGroupNumber629,20981
+    unsigned char startBusNumber;startBusNumber630,21023
+    unsigned char endBusNumber;endBusNumber631,21057
+    char reserved[4];reserved632,21089
+    void print()print633,21111
+struct MCFGHeaderMCFGHeader640,21395
+    char signature[4];signature642,21415
+    unsigned length;length643,21438
+    unsigned char revision;revision644,21459
+    unsigned char checksum;checksum645,21487
+    char OEMID[6];OEMID646,21515
+    char OEMTableID[8];OEMTableID647,21534
+    unsigned OEMRevision;OEMRevision648,21558
+    unsigned creatorID;creatorID649,21584
+    unsigned creatorRevision;creatorRevision650,21608
+    char reserved[8];reserved651,21638
+    unsigned nrecords() constnrecords653,21661
+    void print()print658,21769
+
+gen_new_win_project.sh,0
+
+winring0/OlsApiInitDef.h,5769
+typedef DWORD (WINAPI *_GetDllStatus) ();_GetDllStatus20,617
+typedef DWORD (WINAPI *_GetDllVersion) (PBYTE major, PBYTE minor, PBYTE revision, PBYTE release);_GetDllVersion21,659
+typedef DWORD (WINAPI *_GetDriverVersion) (PBYTE major, PBYTE minor, PBYTE revision, PBYTE release);_GetDriverVersion22,757
+typedef DWORD (WINAPI *_GetDriverType) ();_GetDriverType23,858
+typedef BOOL (WINAPI *_InitializeOls) ();_InitializeOls25,902
+typedef VOID (WINAPI *_DeinitializeOls) ();_DeinitializeOls26,944
+typedef BOOL (WINAPI *_IsCpuid) ();_IsCpuid29,996
+typedef BOOL (WINAPI *_IsMsr) ();_IsMsr30,1032
+typedef BOOL (WINAPI *_IsTsc) ();_IsTsc31,1066
+typedef BOOL  (WINAPI *_Hlt) ();_Hlt33,1101
+typedef DWORD (WINAPI *_Rdmsr) (DWORD index, PDWORD eax, PDWORD edx);_Rdmsr34,1134
+typedef DWORD (WINAPI *_Wrmsr) (DWORD index, DWORD eax, DWORD edx);_Wrmsr35,1204
+typedef DWORD (WINAPI *_Rdpmc) (DWORD index, PDWORD eax, PDWORD edx);_Rdpmc36,1272
+typedef DWORD (WINAPI *_Cpuid) (DWORD index, PDWORD eax, PDWORD ebx, PDWORD ecx, PDWORD edx);_Cpuid37,1342
+typedef DWORD (WINAPI *_Rdtsc) (PDWORD eax, PDWORD edx);_Rdtsc38,1436
+typedef BOOL  (WINAPI *_HltTx) (DWORD_PTR threadAffinityMask);_HltTx40,1494
+typedef DWORD (WINAPI *_RdmsrTx) (DWORD index, PDWORD eax, PDWORD edx, DWORD_PTR threadAffinityMask);_RdmsrTx41,1557
+typedef DWORD (WINAPI *_WrmsrTx) (DWORD index, DWORD eax, DWORD edx, DWORD_PTR threadAffinityMask);_WrmsrTx42,1659
+typedef DWORD (WINAPI *_RdpmcTx) (DWORD index, PDWORD eax, PDWORD edx, DWORD_PTR threadAffinityMask);_RdpmcTx43,1759
+typedef DWORD (WINAPI *_CpuidTx) (DWORD index, PDWORD eax, PDWORD ebx, PDWORD ecx, PDWORD edx, DWORD_PTR threadAffinityMask);_CpuidTx44,1861
+typedef DWORD (WINAPI *_RdtscTx) (PDWORD eax, PDWORD edx, DWORD_PTR threadAffinityMask);_RdtscTx45,1987
+typedef BOOL  (WINAPI *_HltPx)   (DWORD_PTR processAffinityMask);_HltPx47,2077
+typedef DWORD (WINAPI *_RdmsrPx) (DWORD index, PDWORD eax, PDWORD edx, DWORD_PTR processAffinityMask);_RdmsrPx48,2143
+typedef DWORD (WINAPI *_WrmsrPx) (DWORD index, DWORD eax, DWORD edx, DWORD_PTR processAffinityMask);_WrmsrPx49,2246
+typedef DWORD (WINAPI *_RdpmcPx) (DWORD index, PDWORD eax, PDWORD edx, DWORD_PTR processAffinityMask);_RdpmcPx50,2347
+typedef DWORD (WINAPI *_CpuidPx) (DWORD index, PDWORD eax, PDWORD ebx, PDWORD ecx, PDWORD edx, DWORD_PTR processAffinityMask);_CpuidPx51,2450
+typedef DWORD (WINAPI *_RdtscPx) (PDWORD eax, PDWORD edx, DWORD_PTR processAffinityMask);_RdtscPx52,2577
+typedef BYTE  (WINAPI *_ReadIoPortByte) (WORD address);_ReadIoPortByte55,2675
+typedef WORD  (WINAPI *_ReadIoPortWord) (WORD address);_ReadIoPortWord56,2731
+typedef DWORD (WINAPI *_ReadIoPortDword) (WORD address);_ReadIoPortDword57,2787
+typedef BOOL (WINAPI *_ReadIoPortByteEx) (WORD address, PBYTE value);_ReadIoPortByteEx59,2845
+typedef BOOL (WINAPI *_ReadIoPortWordEx) (WORD address, PWORD value);_ReadIoPortWordEx60,2915
+typedef BOOL (WINAPI *_ReadIoPortDwordEx) (WORD address, PDWORD value);_ReadIoPortDwordEx61,2985
+typedef VOID (WINAPI *_WriteIoPortByte) (WORD address, BYTE value);_WriteIoPortByte63,3058
+typedef VOID (WINAPI *_WriteIoPortWord) (WORD address, WORD value);_WriteIoPortWord64,3126
+typedef VOID (WINAPI *_WriteIoPortDword) (WORD address, DWORD value);_WriteIoPortDword65,3194
+typedef BOOL (WINAPI *_WriteIoPortByteEx) (WORD address, BYTE value);_WriteIoPortByteEx67,3265
+typedef BOOL (WINAPI *_WriteIoPortWordEx) (WORD address, WORD value);_WriteIoPortWordEx68,3335
+typedef BOOL (WINAPI *_WriteIoPortDwordEx) (WORD address, DWORD value);_WriteIoPortDwordEx69,3405
+typedef VOID (WINAPI *_SetPciMaxBusIndex) (BYTE max);_SetPciMaxBusIndex72,3485
+typedef BYTE  (WINAPI *_ReadPciConfigByte) (DWORD pciAddress, BYTE regAddress);_ReadPciConfigByte74,3540
+typedef WORD  (WINAPI *_ReadPciConfigWord) (DWORD pciAddress, BYTE regAddress);_ReadPciConfigWord75,3620
+typedef DWORD (WINAPI *_ReadPciConfigDword) (DWORD pciAddress, BYTE regAddress);_ReadPciConfigDword76,3700
+typedef BOOL (WINAPI *_ReadPciConfigByteEx) (DWORD pciAddress, DWORD regAddress, PBYTE value);_ReadPciConfigByteEx78,3782
+typedef BOOL (WINAPI *_ReadPciConfigWordEx) (DWORD pciAddress, DWORD regAddress, PWORD value);_ReadPciConfigWordEx79,3877
+typedef BOOL (WINAPI *_ReadPciConfigDwordEx) (DWORD pciAddress, DWORD regAddress, PDWORD value);_ReadPciConfigDwordEx80,3972
+typedef VOID (WINAPI *_WritePciConfigByte) (DWORD pciAddress, BYTE regAddress, BYTE value);_WritePciConfigByte82,4070
+typedef VOID (WINAPI *_WritePciConfigWord) (DWORD pciAddress, BYTE regAddress, WORD value);_WritePciConfigWord83,4162
+typedef VOID (WINAPI *_WritePciConfigDword) (DWORD pciAddress, BYTE regAddress, DWORD value);_WritePciConfigDword84,4254
+typedef BOOL (WINAPI *_WritePciConfigByteEx) (DWORD pciAddress, DWORD regAddress, BYTE value);_WritePciConfigByteEx86,4349
+typedef BOOL (WINAPI *_WritePciConfigWordEx) (DWORD pciAddress, DWORD regAddress, WORD value);_WritePciConfigWordEx87,4444
+typedef BOOL (WINAPI *_WritePciConfigDwordEx) (DWORD pciAddress, DWORD regAddress, DWORD value);_WritePciConfigDwordEx88,4539
+typedef DWORD (WINAPI *_FindPciDeviceById) (WORD vendorId, WORD deviceId, BYTE index);_FindPciDeviceById90,4637
+typedef DWORD (WINAPI *_FindPciDeviceByClass) (BYTE baseClass, BYTE subClass, BYTE programIf, BYTE index);_FindPciDeviceByClass91,4724
+typedef DWORD (WINAPI *_ReadDmiMemory) (PBYTE buffer, DWORD count, DWORD unitSize);_ReadDmiMemory95,4874
+typedef DWORD (WINAPI *_ReadPhysicalMemory) (DWORD_PTR address, PBYTE buffer, DWORD count, DWORD unitSize);_ReadPhysicalMemory96,4958
+typedef DWORD (WINAPI *_WritePhysicalMemory) (DWORD_PTR address, PBYTE buffer, DWORD count, DWORD unitSize);_WritePhysicalMemory97,5066
+
+winring0/OlsApiInitExt.h,0
+
+winring0/OlsDef.h,1308
+#define OLS_DLL_NO_ERROR	OLS_DLL_NO_ERROR18,591
+#define OLS_DLL_UNSUPPORTED_PLATFORM	OLS_DLL_UNSUPPORTED_PLATFORM19,623
+#define OLS_DLL_DRIVER_NOT_LOADED	OLS_DLL_DRIVER_NOT_LOADED20,664
+#define OLS_DLL_DRIVER_NOT_FOUND	OLS_DLL_DRIVER_NOT_FOUND21,703
+#define OLS_DLL_DRIVER_UNLOADED	OLS_DLL_DRIVER_UNLOADED22,741
+#define OLS_DLL_DRIVER_NOT_LOADED_ON_NETWORK	OLS_DLL_DRIVER_NOT_LOADED_ON_NETWORK23,779
+#define OLS_DLL_UNKNOWN_ERROR	OLS_DLL_UNKNOWN_ERROR24,826
+#define OLS_DRIVER_TYPE_UNKNOWN	OLS_DRIVER_TYPE_UNKNOWN32,1045
+#define OLS_DRIVER_TYPE_WIN_9X	OLS_DRIVER_TYPE_WIN_9X33,1081
+#define OLS_DRIVER_TYPE_WIN_NT	OLS_DRIVER_TYPE_WIN_NT34,1116
+#define OLS_DRIVER_TYPE_WIN_NT4	OLS_DRIVER_TYPE_WIN_NT435,1151
+#define OLS_DRIVER_TYPE_WIN_NT_X64	OLS_DRIVER_TYPE_WIN_NT_X6436,1199
+#define OLS_DRIVER_TYPE_WIN_NT_IA64	OLS_DRIVER_TYPE_WIN_NT_IA6437,1237
+#define OLS_ERROR_PCI_BUS_NOT_EXIST	OLS_ERROR_PCI_BUS_NOT_EXIST45,1473
+#define OLS_ERROR_PCI_NO_DEVICE	OLS_ERROR_PCI_NO_DEVICE46,1524
+#define OLS_ERROR_PCI_WRITE_CONFIG	OLS_ERROR_PCI_WRITE_CONFIG47,1572
+#define OLS_ERROR_PCI_READ_CONFIG	OLS_ERROR_PCI_READ_CONFIG48,1622
+#define PciBusDevFunc(PciBusDevFunc57,1928
+#define PciGetBus(PciGetBus59,2047
+#define PciGetDev(PciGetDev61,2138
+#define PciGetFunc(PciGetFunc63,2231
+
+winring0/OlsApiInit.h,3985
+_GetDllStatus GetDllStatus = NULL;GetDllStatus32,923
+_GetDllVersion GetDllVersion = NULL;GetDllVersion33,958
+_GetDriverVersion GetDriverVersion = NULL;GetDriverVersion34,995
+_GetDriverType GetDriverType = NULL;GetDriverType35,1038
+_InitializeOls InitializeOls = NULL;InitializeOls37,1076
+_DeinitializeOls DeinitializeOls = NULL;DeinitializeOls38,1113
+_IsCpuid IsCpuid = NULL;IsCpuid41,1162
+_IsMsr IsMsr = NULL;IsMsr42,1187
+_IsTsc IsTsc = NULL;IsTsc43,1208
+_Hlt Hlt = NULL;Hlt45,1230
+_Rdmsr Rdmsr = NULL;Rdmsr46,1247
+_Wrmsr Wrmsr = NULL;Wrmsr47,1268
+_Rdpmc Rdpmc = NULL;Rdpmc48,1289
+_Cpuid Cpuid = NULL;Cpuid49,1310
+_Rdtsc Rdtsc = NULL;Rdtsc50,1331
+_HltTx HltTx = NULL;HltTx52,1353
+_RdmsrTx RdmsrTx = NULL;RdmsrTx53,1374
+_WrmsrTx WrmsrTx = NULL;WrmsrTx54,1399
+_RdpmcTx RdpmcTx = NULL;RdpmcTx55,1424
+_CpuidTx CpuidTx = NULL;CpuidTx56,1449
+_RdtscTx RdtscTx = NULL;RdtscTx57,1474
+_HltPx HltPx = NULL;HltPx59,1500
+_RdmsrPx RdmsrPx = NULL;RdmsrPx60,1521
+_WrmsrPx WrmsrPx = NULL;WrmsrPx61,1546
+_RdpmcPx RdpmcPx = NULL;RdpmcPx62,1571
+_CpuidPx CpuidPx = NULL;CpuidPx63,1596
+_RdtscPx RdtscPx = NULL;RdtscPx64,1621
+_ReadIoPortByte ReadIoPortByte = NULL;ReadIoPortByte67,1654
+_ReadIoPortWord ReadIoPortWord = NULL;ReadIoPortWord68,1693
+_ReadIoPortDword ReadIoPortDword = NULL;ReadIoPortDword69,1732
+_ReadIoPortByteEx ReadIoPortByteEx = NULL;ReadIoPortByteEx71,1774
+_ReadIoPortWordEx ReadIoPortWordEx = NULL;ReadIoPortWordEx72,1817
+_ReadIoPortDwordEx ReadIoPortDwordEx = NULL;ReadIoPortDwordEx73,1860
+_WriteIoPortByte WriteIoPortByte = NULL;WriteIoPortByte75,1906
+_WriteIoPortWord WriteIoPortWord = NULL;WriteIoPortWord76,1947
+_WriteIoPortDword WriteIoPortDword = NULL;WriteIoPortDword77,1988
+_WriteIoPortByteEx WriteIoPortByteEx = NULL;WriteIoPortByteEx79,2032
+_WriteIoPortWordEx WriteIoPortWordEx = NULL;WriteIoPortWordEx80,2077
+_WriteIoPortDwordEx WriteIoPortDwordEx = NULL;WriteIoPortDwordEx81,2122
+_SetPciMaxBusIndex SetPciMaxBusIndex = NULL;SetPciMaxBusIndex84,2177
+_ReadPciConfigByte ReadPciConfigByte = NULL;ReadPciConfigByte86,2223
+_ReadPciConfigWord ReadPciConfigWord = NULL;ReadPciConfigWord87,2268
+_ReadPciConfigDword ReadPciConfigDword = NULL;ReadPciConfigDword88,2313
+_ReadPciConfigByteEx ReadPciConfigByteEx = NULL;ReadPciConfigByteEx90,2361
+_ReadPciConfigWordEx ReadPciConfigWordEx = NULL;ReadPciConfigWordEx91,2410
+_ReadPciConfigDwordEx ReadPciConfigDwordEx = NULL;ReadPciConfigDwordEx92,2459
+_WritePciConfigByte WritePciConfigByte = NULL;WritePciConfigByte94,2511
+_WritePciConfigWord WritePciConfigWord = NULL;WritePciConfigWord95,2558
+_WritePciConfigDword WritePciConfigDword = NULL;WritePciConfigDword96,2605
+_WritePciConfigByteEx WritePciConfigByteEx = NULL;WritePciConfigByteEx98,2655
+_WritePciConfigWordEx WritePciConfigWordEx = NULL;WritePciConfigWordEx99,2706
+_WritePciConfigDwordEx WritePciConfigDwordEx = NULL;WritePciConfigDwordEx100,2757
+_FindPciDeviceById FindPciDeviceById = NULL;FindPciDeviceById102,2811
+_FindPciDeviceByClass FindPciDeviceByClass = NULL;FindPciDeviceByClass103,2856
+_ReadDmiMemory ReadDmiMemory = NULL;ReadDmiMemory107,2950
+_ReadPhysicalMemory ReadPhysicalMemory = NULL;ReadPhysicalMemory108,2987
+_WritePhysicalMemory WritePhysicalMemory = NULL;WritePhysicalMemory109,3034
+#define GetOlsString GetOlsString114,3128
+#define GetOlsString GetOlsString116,3169
+_InstallOpenLibSys InstallOpenLibSys = NULL;InstallOpenLibSys119,3212
+_UninstallOpenLibSys UninstallOpenLibSys = NULL;UninstallOpenLibSys120,3257
+_GetDriverStatus GetDriverStatus = NULL;GetDriverStatus121,3306
+_GetOlsStringA GetOlsStringA = NULL;GetOlsStringA123,3348
+_GetOlsStringW GetOlsStringW = NULL;GetOlsStringW124,3385
+_GetOlsValue GetOlsValue = NULL;GetOlsValue125,3422
+_SetOlsValue SetOlsValue = NULL;SetOlsValue126,3455
+BOOL InitOpenLibSys(HMODULE *hModule)InitOpenLibSys135,3677
+BOOL DeinitOpenLibSys(HMODULE *hModule)DeinitOpenLibSys306,10221
+
+winring0/OlsApi.h,0
+
+client_bw.h,453
+#define CPUCounters_CLIENTBW_HCPUCounters_CLIENTBW_H17,1562
+#define PCM_CLIENT_IMC_BAR_OFFSET PCM_CLIENT_IMC_BAR_OFFSET32,1779
+#define PCM_CLIENT_IMC_DRAM_DATA_READS PCM_CLIENT_IMC_DRAM_DATA_READS33,1828
+#define PCM_CLIENT_IMC_DRAM_DATA_WRITES PCM_CLIENT_IMC_DRAM_DATA_WRITES34,1877
+#define PCM_CLIENT_IMC_MMAP_SIZE PCM_CLIENT_IMC_MMAP_SIZE35,1926
+class ClientBWClientBW38,1977
+    int32 fd;fd41,2011
+    char * mmapAddr;mmapAddr42,2025
+
+PCM-Power_Win/stdafx.h,41
+#define _WIN32_WINNT _WIN32_WINNT9,265
+
+PCM-Power_Win/pcm-power-win.cpp,0
+
+PCM-Power_Win/stdafx.cpp,0
+
+cpucounters.cpp,7049
+#define PCM_INSTANCE_LOCK_SEMAPHORE_NAME PCM_INSTANCE_LOCK_SEMAPHORE_NAME73,2726
+#define PCM_NUM_INSTANCES_SEMAPHORE_NAME PCM_NUM_INSTANCES_SEMAPHORE_NAME74,2790
+#define PCM_INSTANCE_LOCK_SEMAPHORE_NAME PCM_INSTANCE_LOCK_SEMAPHORE_NAME76,2859
+#define PCM_NUM_INSTANCES_SEMAPHORE_NAME PCM_NUM_INSTANCES_SEMAPHORE_NAME77,2925
+HMODULE hOpenLibSys = NULL;hOpenLibSys82,3016
+bool PCM::initWinRing0Lib()initWinRing0Lib84,3045
+class SystemWideLockSystemWideLock93,3195
+    HANDLE globalMutex;globalMutex95,3218
+    SystemWideLock()SystemWideLock98,3251
+    ~SystemWideLock()~SystemWideLock105,3512
+class SystemWideLockSystemWideLock113,3627
+    const char * globalSemaphoreName;globalSemaphoreName115,3650
+    sem_t * globalSemaphore;globalSemaphore116,3688
+    SystemWideLock() : globalSemaphoreName(PCM_INSTANCE_LOCK_SEMAPHORE_NAME)SystemWideLock119,3726
+    ~SystemWideLock()~SystemWideLock140,4423
+PCM * PCM::instance = NULL;instance147,4528
+int bitCount(uint64 n)bitCount149,4557
+PCM * PCM::getInstance()getInstance160,4705
+uint32 build_bit_ui(int beg, int end)build_bit_ui171,4885
+uint32 extract_bits_ui(uint32 myin, uint32 beg, uint32 end)extract_bits_ui186,5108
+uint64 build_bit(uint32 beg, uint32 end)build_bit207,5489
+uint64 extract_bits(uint64 myin, uint32 beg, uint32 end)extract_bits222,5717
+uint64 PCM::extractCoreGenCounterValue(uint64 val)extractCoreGenCounterValue243,6092
+uint64 PCM::extractCoreFixedCounterValue(uint64 val)extractCoreFixedCounterValue251,6264
+uint64 PCM::extractUncoreGenCounterValue(uint64 val)extractUncoreGenCounterValue259,6442
+uint64 PCM::extractUncoreFixedCounterValue(uint64 val)extractUncoreFixedCounterValue267,6620
+int32 extractThermalHeadroom(uint64 val)extractThermalHeadroom275,6804
+union PCM_CPUID_INFOPCM_CPUID_INFO288,7055
+	int array[4];array290,7078
+        struct { int eax,ebx,ecx,edx; } reg ;eax291,7093
+        struct { int eax,ebx,ecx,edx; } reg ;ebx291,7093
+        struct { int eax,ebx,ecx,edx; } reg ;ecx291,7093
+        struct { int eax,ebx,ecx,edx; } reg ;edx291,7093
+        struct { int eax,ebx,ecx,edx; } reg ;reg291,7093
+void pcm_cpuid(int leaf, PCM_CPUID_INFO & info)pcm_cpuid294,7143
+PCM::PCM() :PCM305,7458
+void PCM::enableJKTWorkaround(bool enable)enableJKTWorkaround860,29350
+bool PCM::isCPUModelSupported(int model_)isCPUModelSupported887,30291
+bool PCM::checkModel()checkModel901,30671
+void PCM::destroyMSR()destroyMSR920,31231
+PCM::~PCM()~PCM931,31437
+bool PCM::good()good962,32205
+class TemporalThreadAffinity  // speedup trick for LinuxTemporalThreadAffinity967,32251
+    cpu_set_t old_affinity;old_affinity970,32327
+    TemporalThreadAffinity(uint32 core_id)TemporalThreadAffinity974,32406
+    ~TemporalThreadAffinity()~TemporalThreadAffinity983,32732
+perf_event_attr PCM_init_perf_event_attr()PCM_init_perf_event_attr996,33022
+PCM::ErrorCode PCM::program(PCM::ProgramMode mode_, void * parameter_)program1027,33832
+void PCM::programNehalemEPUncore(int32 core)programNehalemEPUncore1374,47207
+#define CPUCNT_INIT_THE_REST_OF_EVTCNT CPUCNT_INIT_THE_REST_OF_EVTCNT1377,47255
+#undef CPUCNT_INIT_THE_REST_OF_EVTCNTCPUCNT_INIT_THE_REST_OF_EVTCNT1446,50780
+void PCM::programBecktonUncore(int32 core)programBecktonUncore1463,51447
+void PCM::resetPMU()resetPMU1789,64070
+void PCM::cleanup()cleanup1818,64902
+uint32 PCM::getNumInstances()getNumInstances1832,65108
+uint32 PCM::incrementNumInstances()incrementNumInstances1838,65182
+uint32 PCM::decrementNumInstances()decrementNumInstances1843,65267
+int convertUnknownToInt(size_t size, char* value){convertUnknownToInt1848,65353
+bool PCM::decrementInstanceSemaphore()decrementInstanceSemaphore1870,65767
+uint64 PCM::getTickCount(uint64 multiplier, uint32 core)getTickCount1939,67645
+uint64 RDTSC()RDTSC1944,67821
+uint64 RDTSCP()RDTSCP1962,68165
+uint64 PCM::getTickCountRDTSCP(uint64 multiplier)getTickCountRDTSCP1985,68645
+SystemCounterState getSystemCounterState()getSystemCounterState1990,68753
+SocketCounterState getSocketCounterState(uint32 socket)getSocketCounterState1998,68942
+CoreCounterState getCoreCounterState(uint32 core)getCoreCounterState2006,69150
+void PCM::readPerfData(uint32 core, std::vector<uint64> & outData)readPerfData2015,69366
+void BasicCounterState::readAndAggregate(MsrHandle * msr)readAndAggregate2036,70319
+PCM::ErrorCode PCM::programSNB_EP_PowerMetrics(int mc_profile, int pcu_profile, int * freq_bands)programSNB_EP_PowerMetrics2125,73645
+void PCM::freezeJKTCounters()freezeJKTCounters2217,77799
+void PCM::unfreezeJKTCounters()unfreezeJKTCounters2225,78062
+void UncoreCounterState::readAndAggregate(MsrHandle * msr)readAndAggregate2233,78302
+SystemCounterState PCM::getSystemCounterState()getSystemCounterState2297,80384
+SocketCounterState PCM::getSocketCounterState(uint32 socket)getSocketCounterState2460,87569
+CoreCounterState PCM::getCoreCounterState(uint32 core)getCoreCounterState2506,89103
+uint32 PCM::getNumCores()getNumCores2513,89260
+uint32 PCM::getNumSockets()getNumSockets2518,89313
+uint32 PCM::getThreadsPerCore()getThreadsPerCore2523,89370
+bool PCM::getSMT()getSMT2528,89436
+uint64 PCM::getNominalFrequency()getNominalFrequency2533,89493
+JKTUncorePowerState PCM::getJKTUncorePowerState(uint32 socket)getJKTUncorePowerState2538,89562
+void print_mcfg(const char * path)print_mcfg2581,91324
+int getBusFromSocket(const uint32 socket)getBusFromSocket2608,91932
+JKT_Uncore_Pci::JKT_Uncore_Pci(uint32 socket_, PCM * pcm) : bus(-1), groupnr(0), imcHandles(NULL), num_imc_channels(0), qpiLLHandles(NULL), num_qpi_ports(0), qpi_speed(0)JKT_Uncore_Pci2631,92691
+JKT_Uncore_Pci::~JKT_Uncore_Pci()~JKT_Uncore_Pci2713,95620
+void JKT_Uncore_Pci::program()program2733,96053
+uint64 JKT_Uncore_Pci::getImcReads()getImcReads2833,100590
+uint64 JKT_Uncore_Pci::getImcWrites()getImcWrites2847,100849
+uint64 JKT_Uncore_Pci::getIncomingDataFlits(uint32 port)getIncomingDataFlits2861,101109
+uint64 JKT_Uncore_Pci::getOutgoingDataNonDataFlits(uint32 port)getOutgoingDataNonDataFlits2869,101336
+void JKT_Uncore_Pci::program_power_metrics(int mc_profile)program_power_metrics2874,101441
+void JKT_Uncore_Pci::freezeCounters()freezeCounters2987,107811
+void JKT_Uncore_Pci::unfreezeCounters()unfreezeCounters2999,108193
+uint64 JKT_Uncore_Pci::getQPIClocks(uint32 port)getQPIClocks3011,108514
+uint64 JKT_Uncore_Pci::getQPIL0pTxCycles(uint32 port)getQPIL0pTxCycles3018,108661
+uint64 JKT_Uncore_Pci::getQPIL1Cycles(uint32 port)getQPIL1Cycles3025,108813
+uint64 JKT_Uncore_Pci::getDRAMClocks(uint32 channel)getDRAMClocks3032,108962
+uint64 JKT_Uncore_Pci::getMCCounter(uint32 channel, uint32 counter)getMCCounter3042,109170
+uint64 JKT_Uncore_Pci::getQPILLCounter(uint32 port, uint32 counter)getQPILLCounter3068,109705
+void JKT_Uncore_Pci::enableJKTWorkaround(bool enable)enableJKTWorkaround3094,110222
+uint64 JKT_Uncore_Pci::computeQPISpeed()computeQPISpeed3128,110972
+void * WatchDogProc(void * state)WatchDogProc3165,112209
+
+pcm-power.cpp,1457
+#define HACK_TO_REMOVE_DUPLICATE_ERRORHACK_TO_REMOVE_DUPLICATE_ERROR15,1533
+void MySleep(int delay)MySleep31,1862
+void MySleepMs(int delay_ms)MySleepMs40,1973
+void MySystem(char * sysCmd)MySystem49,2098
+int getFirstRank(int imc_profile)getFirstRank58,2285
+int getSecondRank(int imc_profile)getSecondRank62,2349
+double getCKEOffResidency(uint32 channel, uint32 rank, const JKTUncorePowerState & before, const JKTUncorePowerState & after)getCKEOffResidency67,2419
+int64 getCKEOffAverageCycles(uint32 channel, uint32 rank, const JKTUncorePowerState & before, const JKTUncorePowerState & after)getCKEOffAverageCycles72,2662
+int64 getCyclesPerTransition(uint32 channel, uint32 rank, const JKTUncorePowerState & before, const JKTUncorePowerState & after)getCyclesPerTransition81,2960
+uint64 getSelfRefreshCycles(uint32 channel, const JKTUncorePowerState & before, const JKTUncorePowerState & after)getSelfRefreshCycles90,3246
+uint64 getSelfRefreshTransitions(uint32 channel, const JKTUncorePowerState & before, const JKTUncorePowerState & after)getSelfRefreshTransitions95,3415
+double getNormalizedPCUCounter(uint32 counter, const JKTUncorePowerState & before, const JKTUncorePowerState & after)getNormalizedPCUCounter100,3589
+int default_freq_band[3] = {12,20,40};default_freq_band105,3805
+int freq_band[3];freq_band106,3844
+void print_usage(const char * progname)print_usage108,3863
+int main(int argc, char * argv[])main136,6615
+
+pcm-sensor.cpp,290
+#define HACK_TO_REMOVE_DUPLICATE_ERRORHACK_TO_REMOVE_DUPLICATE_ERROR25,1879
+int main()main33,2028
+#define OUTPUT_CORE_METRIC(OUTPUT_CORE_METRIC502,20964
+        #define OUTPUT_SOCKET_METRIC(OUTPUT_SOCKET_METRIC526,22537
+	#define OUTPUT_SYSTEM_METRIC(OUTPUT_SYSTEM_METRIC565,25447
+
+memoptest.cpp,528
+inline double my_timestamp()my_timestamp28,1737
+struct TT35,1877
+    int key[1];key37,1888
+    int data[3];data38,1904
+    T() { }T40,1922
+    T(int a) { key[0] = a; }T41,1934
+    bool operator == (const T & k) constoperator ==43,1964
+void write_intensive_task(Y * p, Y * e, int value)write_intensive_task51,2076
+void stream_write_task(Y * p, Y * e, int value)stream_write_task70,2369
+void read_intensive_task(Y * p, Y * e, int value)read_intensive_task81,2577
+int main(int argc, char * argv[])main87,2658
+
+Intelpcm.dll/dllmain.cpp,56
+BOOL APIENTRY DllMain( HMODULE hModule,DllMain22,1650
+
+Intelpcm.dll/Intelpcm.cpp,0
+
+Intelpcm.dll/Intelpcm.h,86
+#define INTELPCM_API INTELPCM_API25,2077
+#define INTELPCM_API INTELPCM_API27,2128
+
+Intelpcm.dll/targetver.h,158
+#define WINVER WINVER28,2209
+#define _WIN32_WINNT _WIN32_WINNT32,2428
+#define _WIN32_WINDOWS _WIN32_WINDOWS36,2644
+#define _WIN32_IE _WIN32_IE40,2871
+
+PCM_Win/pcm.cpp,0
+
+PCM_Win/stdafx.h,43
+#define _WIN32_WINNT _WIN32_WINNT22,1789
+
+PCM_Win/windriver.h,314
+#define WINDRIVER_HEADERWINDRIVER_HEADER2,25
+class DriverDriver32,2052
+    SC_HANDLE hSCManager;hSCManager34,2067
+    SC_HANDLE hService;hService35,2093
+    SERVICE_STATUS ss;ss36,2117
+    bool start(LPCWSTR driverPath)start46,2373
+    void stop()stop101,4227
+    void uninstall()uninstall124,4997
+
+PCM_Win/stdafx.cpp,0
+
+test.cpp,939
+#define HACK_TO_REMOVE_DUPLICATE_ERRORHACK_TO_REMOVE_DUPLICATE_ERROR16,1536
+inline double my_timestamp()my_timestamp35,1939
+long long int fib(long long int num)fib42,2079
+SystemCounterState before_sstate, after_sstate;before_sstate56,2302
+SystemCounterState before_sstate, after_sstate;after_sstate56,2302
+double before_time, after_time;before_time57,2350
+double before_time, after_time;after_time57,2350
+long long int all_fib = 0;all_fib61,2418
+void CPU_intensive_task()CPU_intensive_task64,2447
+void Memory_intensive_task(DS & ds)Memory_intensive_task72,2579
+printDiff () {printDiff79,2705
+void measure(DS & ds, size_t repeat, size_t nelements)measure83,2743
+struct TT133,5001
+    int key[1];key135,5012
+    int data[15];data136,5028
+    T() { }T138,5047
+    T(int a) { key[0] = a; }T139,5059
+    bool operator == (const T & k) constoperator ==141,5089
+int main(int argc, char * argv[])main148,5182
+
+PCM-MSR_Win/pcm-msr-win.cpp,0
+
+PCM-MSR_Win/stdafx.h,41
+#define _WIN32_WINNT _WIN32_WINNT9,265
+
+PCM-MSR_Win/stdafx.cpp,0
+
+WinMSRDriver/WinXP/msr.h,39
+#define MSR_INCLUDEDMSR_INCLUDED2,21
+
+WinMSRDriver/WinXP/makefile,0
+
+WinMSRDriver/WinXP/mymake.bat,31
+set BUILD_PATH=BUILD_PATH1,0
+
+WinMSRDriver/WinXP/msrmain.c,509
+#define NT_DEVICE_NAME NT_DEVICE_NAME27,1757
+#define DOS_DEVICE_NAME DOS_DEVICE_NAME28,1799
+DRIVER_INITIALIZE DriverEntry;DriverEntry31,1848
+DRIVER_DISPATCH deviceControl;deviceControl40,2023
+DRIVER_UNLOAD MSRUnload;MSRUnload43,2056
+DriverEntry(DriverEntry54,2270
+NTSTATUS dummyFunction(PDEVICE_OBJECT DeviceObject, PIRP Irp)dummyFunction103,3651
+VOID MSRUnload(PDRIVER_OBJECT DriverObject)MSRUnload119,3934
+NTSTATUS deviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)deviceControl137,4274
+
+WinMSRDriver/WinXP/msrstruct.h,395
+#define MSR_STRUCT_HEADERMSR_STRUCT_HEADER19,1566
+#define MSR_DEV_TYPE MSR_DEV_TYPE26,1641
+#define IO_CTL_MSR_READ IO_CTL_MSR_READ28,1669
+#define IO_CTL_MSR_WRITE IO_CTL_MSR_WRITE29,1758
+struct MSR_RequestMSR_Request31,1848
+    int core_id;core_id33,1869
+    ULONG64 msr_address;msr_address34,1886
+    ULONG64 write_value;     /* value to write if write requetwrite_value35,1911
+
+WinMSRDriver/Win7/msr.h,39
+#define MSR_INCLUDEDMSR_INCLUDED2,21
+
+WinMSRDriver/Win7/makefile,0
+
+WinMSRDriver/Win7/mymake.bat,31
+set BUILD_PATH=BUILD_PATH1,0
+
+WinMSRDriver/Win7/msrmain.c,508
+#define NT_DEVICE_NAME NT_DEVICE_NAME28,1745
+#define DOS_DEVICE_NAME DOS_DEVICE_NAME29,1787
+DRIVER_INITIALIZE DriverEntry;DriverEntry32,1836
+DRIVER_DISPATCH deviceControl;deviceControl39,2009
+DRIVER_UNLOAD MSRUnload;MSRUnload41,2041
+DriverEntry(DriverEntry52,2255
+NTSTATUS dummyFunction(PDEVICE_OBJECT DeviceObject, PIRP Irp)dummyFunction99,3634
+VOID MSRUnload(PDRIVER_OBJECT DriverObject)MSRUnload115,3917
+NTSTATUS deviceControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)deviceControl133,4257
+
+WinMSRDriver/Win7/msrstruct.h,850
+#define MSR_STRUCT_HEADERMSR_STRUCT_HEADER19,1584
+#define MSR_DEV_TYPE MSR_DEV_TYPE26,1666
+#define IO_CTL_MSR_READ IO_CTL_MSR_READ28,1696
+#define IO_CTL_MSR_WRITE IO_CTL_MSR_WRITE29,1789
+#define IO_CTL_PCICFG_READ IO_CTL_PCICFG_READ30,1882
+#define IO_CTL_PCICFG_WRITE IO_CTL_PCICFG_WRITE31,1975
+struct MSR_RequestMSR_Request33,2070
+    int core_id;core_id35,2093
+    ULONG64 msr_address;msr_address36,2111
+    ULONG64 write_value;     /* value to write if write requetwrite_value37,2137
+struct PCICFG_RequestPCICFG_Request41,2268
+    ULONG bus, dev, func, reg, bytes;bus43,2294
+    ULONG bus, dev, func, reg, bytes;dev43,2294
+    ULONG bus, dev, func, reg, bytes;func43,2294
+    ULONG bus, dev, func, reg, bytes;reg43,2294
+    ULONG bus, dev, func, reg, bytes;bytes43,2294
+    ULONG64 write_value;write_value46,2435
+
+pci.h,932
+#define CPUCounters_PCI_HCPUCounters_PCI_H19,1617
+#define PCM_USE_PCI_MM_LINUXPCM_USE_PCI_MM_LINUX35,1831
+class PciHandlePciHandle37,1861
+    HANDLE hDriver;hDriver40,1895
+    uint32 bus;bus45,1943
+    uint32 device;device46,1959
+    uint32 function;function47,1978
+    DWORD pciAddress;pciAddress49,2015
+typedef PciHandle PciHandleM;PciHandleM70,2530
+typedef PciHandle PciHandleM;PciHandleM73,2636
+typedef PciHandle PciHandleM;PciHandleM75,2684
+class PciHandleMPciHandleM79,2774
+    uint32 bus;bus87,2838
+    uint32 device;device88,2854
+    uint32 function;function89,2873
+    uint64 base_addr;base_addr90,2894
+class PciHandleMMPciHandleMM112,3468
+    int32 fd;fd114,3488
+    char * mmapAddr;mmapAddr115,3502
+    uint32 bus;bus117,3524
+    uint32 device;device118,3540
+    uint32 function;function119,3559
+    uint64 base_addr;base_addr120,3580
+#define PciHandleM PciHandleM140,4110
+
+freegetopt/getopt.c,1108
+#define _CRT_SECURE_NO_WARNINGS_CRT_SECURE_NO_WARNINGS37,1796
+static const char* ID = "$Id: getopt.c,v 1.2 2003/10/26 03:10:20 vindaci Exp $";ID45,1910
+char* optarg = NULL;optarg48,1993
+int optind = 0;optind49,2014
+int opterr = 1;opterr50,2030
+int optopt = '?';optopt51,2046
+static char** prev_argv = NULL;        /* Keep a copy of argv and argc to */prev_argv54,2066
+static int prev_argc = 0;              /*    tell if getopt params change */prev_argc55,2143
+static int argv_index = 0;             /* Option we're checking */argv_index56,2220
+static int argv_index2 = 0;            /* Option argument we're checking */argv_index257,2287
+static int opt_offset = 0;             /* Index into compounded "-option" */opt_offset58,2363
+static int dashdash = 0;               /* True if "--" option reached */dashdash59,2440
+static int nonopt = 0;                 /* How many nonopts we've found */nonopt60,2513
+static void increment_index()increment_index62,2588
+static int permute_argv_once()permute_argv_once79,2927
+int getopt(int argc, char** argv, char* optstr)getopt99,3348
+
+freegetopt/getopt.h,36
+#define GETOPT_H_GETOPT_H_38,1814
+
+pcm-memory.cpp,918
+#define HACK_TO_REMOVE_DUPLICATE_ERRORHACK_TO_REMOVE_DUPLICATE_ERROR19,1688
+void print_help(char * prog_name)print_help40,2100
+BOOL cleanup(DWORD)cleanup53,2559
+void cleanup(int s)cleanup59,2642
+void MySleep(int delay)MySleep67,2746
+void MySleepMs(int delay_ms)MySleepMs76,2857
+int MySystem(char * sysCmd)MySystem85,2982
+struct null_stream : public std::streambufnull_stream95,3236
+    void overflow(char) { }overflow97,3281
+void display_bandwidth(float *iMC_Rd_socket_chan, float *iMC_Wr_socket_chan, float *iMC_Rd_socket, float *iMC_Wr_socket, uint32 numSockets, uint32 num_imc_channels, uint64 *partial_write)display_bandwidth100,3313
+const uint32 max_sockets = 4;max_sockets179,8726
+void calculate_bandwidth(PCM *m, const JKTUncorePowerState uncState1[], const JKTUncorePowerState uncState2[], uint64 elapsedTime)calculate_bandwidth181,8757
+int main(int argc, char * argv[])main220,10504
+
+readmem.sh,0
+
+pcm-msr.cpp,236
+#define HACK_TO_REMOVE_DUPLICATE_ERRORHACK_TO_REMOVE_DUPLICATE_ERROR15,1528
+uint64 read_number(char * str)read_number32,1877
+void print_usage(const char * progname)print_usage41,2079
+int main(int argc, char * argv[])main51,2540
+
+MacMSRDriver/Makefile,0
+
+MacMSRDriver/PcmMsr/PcmMsrClient.h,303
+#define PcmMsrClientClassName PcmMsrClientClassName19,1610
+class PcmMsrClientClassName : public IOUserClientPcmMsrClientClassName21,1671
+    PcmMsrDriverClassName*                  fProvider;fProvider26,1800
+    static const IOExternalMethodDispatch   sMethods[kNumberOfMethods];sMethods27,1855
+
+MacMSRDriver/PcmMsr/PcmMsr.cpp,1571
+#define wrmsr(wrmsr19,1602
+#define rdmsr(rdmsr21,1686
+#define cpuid(cpuid23,1775
+inline uint64_t RDMSR(uint32_t msr)RDMSR32,2071
+inline void WRMSR(uint32_t msr, uint64_t value)WRMSR41,2226
+void cpuReadMSR(void* pIData){cpuReadMSR49,2388
+void cpuWriteMSR(void* pIDatas){cpuWriteMSR58,2597
+void cpuGetTopoData(void* pTopos){cpuGetTopoData67,2816
+#define super super81,3281
+bool PcmMsrDriverClassName::start(IOService* provider){start83,3306
+uint32_t PcmMsrDriverClassName::getNumCores()getNumCores93,3492
+bool PcmMsrDriverClassName::init(OSDictionary *dict)init119,4231
+void PcmMsrDriverClassName::free()free131,4569
+bool PcmMsrDriverClassName::handleOpen(IOService * forClient, IOOptionBits opts, void* args){handleOpen141,4969
+bool PcmMsrDriverClassName::handleIsOpen(const IOService* forClient) const{handleIsOpen145,5083
+void PcmMsrDriverClassName::handleClose(IOService* forClient, IOOptionBits opts){handleClose149,5179
+IOReturn PcmMsrDriverClassName::readMSR(pcm_msr_data_t* idatas,pcm_msr_data_t* odatas){readMSR152,5264
+IOReturn PcmMsrDriverClassName::writeMSR(pcm_msr_data_t* idata){writeMSR171,5887
+IOReturn PcmMsrDriverClassName::buildTopology(topologyEntry* odata, uint32_t input_num_cores){buildTopology187,6264
+IOReturn PcmMsrDriverClassName::getNumInstances(uint32_t* num_insts){getNumInstances198,6677
+IOReturn PcmMsrDriverClassName::incrementNumInstances(uint32_t* num_insts){incrementNumInstances203,6809
+IOReturn PcmMsrDriverClassName::decrementNumInstances(uint32_t* num_insts){decrementNumInstances208,6949
+
+MacMSRDriver/PcmMsr/PcmMsrClient.cpp,2708
+#define super super20,1642
+const IOExternalMethodDispatch PcmMsrClientClassName::sMethods[kNumberOfMethods] = {sMethods24,1746
+IOReturn PcmMsrClientClassName::externalMethod(uint32_t selector, IOExternalMethodArguments* args,													IOExternalMethodDispatch* dispatch, OSObject* target, void* reference)externalMethod35,2608
+bool PcmMsrClientClassName::start(IOService* provider)start48,3052
+IOReturn PcmMsrClientClassName::clientClose(void)clientClose63,3364
+bool PcmMsrClientClassName::didTerminate(IOService* provider, IOOptionBits options, bool* defer)didTerminate74,3563
+IOReturn PcmMsrClientClassName::sOpenDriver(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* arguments)sOpenDriver83,3761
+IOReturn PcmMsrClientClassName::openUserClient(void)openUserClient88,3933
+IOReturn PcmMsrClientClassName::checkActiveAndOpened (const char* memberFunction)checkActiveAndOpened103,4377
+IOReturn PcmMsrClientClassName::sCloseDriver(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* arguments)sCloseDriver117,4834
+IOReturn PcmMsrClientClassName::closeUserClient(void)closeUserClient122,5008
+IOReturn PcmMsrClientClassName::sReadMSR(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* arguments){sReadMSR132,5214
+IOReturn PcmMsrClientClassName::readMSR(pcm_msr_data_t* idata, pcm_msr_data_t* odata)readMSR136,5464
+IOReturn PcmMsrClientClassName::sWriteMSR(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* arguments){sWriteMSR146,5725
+IOReturn PcmMsrClientClassName::writeMSR(pcm_msr_data_t* data)writeMSR150,5932
+IOReturn PcmMsrClientClassName::sBuildTopology(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* args){sBuildTopology160,6162
+IOReturn PcmMsrClientClassName::buildTopology(topologyEntry* data, size_t output_size)buildTopology164,6396
+IOReturn PcmMsrClientClassName::sGetNumInstances(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* args){sGetNumInstances175,6728
+IOReturn PcmMsrClientClassName::getNumInstances(uint32_t* num_insts){getNumInstances178,6932
+IOReturn PcmMsrClientClassName::sIncrementNumInstances(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* args){sIncrementNumInstances182,7055
+IOReturn PcmMsrClientClassName::incrementNumInstances(uint32_t* num_insts){incrementNumInstances185,7271
+IOReturn PcmMsrClientClassName::sDecrementNumInstances(PcmMsrClientClassName* target, void* reference, IOExternalMethodArguments* args){sDecrementNumInstances189,7406
+IOReturn PcmMsrClientClassName::decrementNumInstances(uint32_t* num_insts){decrementNumInstances192,7622
+
+MacMSRDriver/PcmMsr/PcmMsr.h,216
+class PcmMsrDriverClassName : public IOServicePcmMsrDriverClassName18,1588
+    uint32_t num_clients;num_clients41,2587
+    uint32_t num_cores;num_cores42,2613
+    kTopologyEntry *topologies;topologies43,2637
+
+MacMSRDriver/PcmMsr/UserKernelShared.h,1240
+#define PcmMsrDriverClassName PcmMsrDriverClassName15,1528
+#define kPcmMsrDriverClassName kPcmMsrDriverClassName16,1582
+#define USER_KERNEL_SHAREDUSER_KERNEL_SHARED18,1666
+    uint64_t value;value21,1730
+    uint32_t cpu_num;cpu_num22,1750
+    uint32_t msr_num;msr_num23,1772
+} pcm_msr_data_t;pcm_msr_data_t24,1794
+    uint64_t value;value27,1830
+    uint32_t msr_num;msr_num28,1850
+    bool mask;mask29,1872
+    char padding[115];padding30,1887
+} k_pcm_msr_data_t;k_pcm_msr_data_t31,1910
+    uint32_t os_id;os_id35,1995
+    uint32_t socket;socket36,2015
+    uint32_t core_id;core_id37,2036
+} topologyEntry;topologyEntry38,2058
+    uint32_t os_id;os_id44,2281
+    uint32_t socket;socket45,2301
+    uint32_t core_id;core_id46,2322
+    char padding[116];padding47,2344
+} kTopologyEntry;kTopologyEntry48,2367
+    kOpenDriver,kOpenDriver51,2393
+    kCloseDriver,kCloseDriver52,2410
+	kReadMSR,kReadMSR53,2428
+    kWriteMSR,kWriteMSR54,2439
+    kBuildTopology,kBuildTopology55,2454
+    kGetNumInstances,kGetNumInstances56,2474
+    kIncrementNumInstances,kIncrementNumInstances57,2496
+    kDecrementNumInstances,kDecrementNumInstances58,2524
+    kNumberOfMethods kNumberOfMethods59,2552
+
+MacMSRDriver/kextload.sh,0
+
+MacMSRDriver/MSRAccessor.h,123
+class MSRAccessor{MSRAccessor20,1601
+    io_service_t service;service22,1629
+    io_connect_t connect;connect23,1655
+
+MacMSRDriver/DriverInterface.c,817
+kern_return_t openMSRClient(io_connect_t connect)openMSRClient18,1568
+kern_return_t closeMSRClient(io_connect_t connect)closeMSRClient36,1957
+kern_return_t readMSR(io_connect_t connect, pcm_msr_data_t* idata, size_t* idata_size,pcm_msr_data_t* odata, size_t* odata_size)readMSR55,2353
+kern_return_t writeMSR(io_connect_t connect, pcm_msr_data_t* data, size_t* idata_size)writeMSR72,2857
+kern_return_t getTopologyInfo(io_connect_t connect, topologyEntry* data, size_t* data_size)getTopologyInfo89,3317
+kern_return_t getNumClients(io_connect_t connect, uint32_t* num_insts)getNumClients106,3775
+kern_return_t incrementNumClients(io_connect_t connect, uint32_t* num_insts)incrementNumClients125,4328
+kern_return_t decrementNumClients(io_connect_t connect, uint32_t* num_insts)decrementNumClients145,4900
+
+MacMSRDriver/MSRKernel.h,327
+#define PcmMsrDriverClassName PcmMsrDriverClassName15,1528
+#define kPcmMsrDriverClassName kPcmMsrDriverClassName16,1582
+#define MSR_KERNEL_SHAREDMSR_KERNEL_SHARED18,1665
+    uint64_t value;value21,1728
+    uint32_t cpu_num;cpu_num22,1748
+    uint32_t msr_num;msr_num23,1770
+} pcm_msr_data_t;pcm_msr_data_t24,1792
+
+MacMSRDriver/DriverInterface.h,0
+
+MacMSRDriver/kextunload.sh,0
+
+MacMSRDriver/MSRAccessorPublic.h,135
+#define MSRACCESSOR_HEADERMSRACCESSOR_HEADER16,1555
+class MSRAccessor{MSRAccessor20,1626
+    uint64_t num_cores;num_cores22,1654
+
+MacMSRDriver/MSRAccessor.cpp,729
+MSRAccessor::MSRAccessor(){MSRAccessor17,1574
+int32_t MSRAccessor::buildTopology(uint32_t num_cores ,void* pTopos){buildTopology22,1735
+int32_t MSRAccessor::read(uint32_t core_num, uint64_t msr_num, uint64_t * value){read29,2021
+int32_t MSRAccessor::write(uint32_t core_num, uint64_t msr_num, uint64_t value){write45,2457
+uint32_t MSRAccessor::getNumInstances(){getNumInstances62,2869
+uint32_t MSRAccessor::incrementNumInstances(){incrementNumInstances68,3011
+uint32_t MSRAccessor::decrementNumInstances(){decrementNumInstances74,3165
+MSRAccessor::~MSRAccessor(){~MSRAccessor80,3319
+kern_return_t MSRAccessor::openConnection(){openConnection84,3374
+void MSRAccessor::closeConnection(){closeConnection101,3856
+
+pcm3d/widget.cpp,2350
+static SystemCounterState sysstate;sysstate23,1673
+static std::vector<SocketCounterState> sockstate;sockstate24,1709
+static std::vector<CoreCounterState> corestate;corestate25,1759
+static SystemCounterState oldsysstate;oldsysstate27,1808
+static std::vector<SocketCounterState> oldsockstate;oldsockstate28,1847
+static std::vector<CoreCounterState> oldcorestate;oldcorestate29,1900
+static void readCounters()readCounters31,1952
+float coreUtil[2][16];coreUtil41,2224
+float iMCUtil[2] = {0,0};iMCUtil42,2247
+float QPIUtil[2] = {0,0};QPIUtil43,2273
+float PackagePower[2] = {0,0};PackagePower44,2299
+float DRAMPower[2] = {0,0};DRAMPower45,2330
+static void updateKPIs()updateKPIs47,2359
+Widget::Widget(QWidget *parent) :Widget93,3841
+void Widget::valueUpdate()valueUpdate116,4288
+void Widget::initializeGL()initializeGL122,4352
+void Widget::resizeGL(int w, int h)resizeGL129,4490
+void Widget::paintGL()paintGL139,4737
+void Widget::keyPressEvent(QKeyEvent* event)keyPressEvent156,5088
+Widget::~Widget()~Widget168,5281
+void Widget::drawWireFrame(float x, float y, float z)drawWireFrame176,5378
+void Widget::draw3DBox(float x, float y, float z, const QColor & c)draw3DBox210,6378
+void Widget::drawPipe(float x, float y, float z, float fill,const QColor & c)drawPipe261,7797
+#define CORE_UNIT CORE_UNIT270,8011
+#define PLATE_UNIT PLATE_UNIT271,8035
+#define CPU_WIDTH CPU_WIDTH272,8060
+void Widget::drawCPU(float * height, QColor * /* colors*/, float power)drawCPU274,8107
+#define DIMM_UNIT DIMM_UNIT299,8800
+#define DIMMS_WIDTH DIMMS_WIDTH300,8834
+void Widget::drawDIMMMs(float power)drawDIMMMs302,8873
+void Widget::drawQPILink(float x, float y, float z, float fill1, float /* fill2*/ ,const QColor & c)drawQPILink323,9372
+void Widget::drawDIMMChannels(float ox, float oy, float oz, float x, float y, float z, float fill,const QColor & c)drawDIMMChannels332,9619
+void Widget::drawAll()drawAll345,9933
+static void qNormalizeAngle(int &angle)qNormalizeAngle374,10776
+void Widget::setXRotation(int angle)setXRotation382,10930
+void Widget::setYRotation(int angle)setYRotation389,11045
+void Widget::setZRotation(int angle)setZRotation396,11165
+void Widget::mousePressEvent(QMouseEvent *event)mousePressEvent403,11285
+void Widget::mouseMoveEvent(QMouseEvent *event)mouseMoveEvent408,11368
+
+pcm3d/demo.sh,0
+
+pcm3d/main.cpp,82
+BOOL cleanup(DWORD)cleanup27,1726
+int main(int argc, char *argv[])main41,1913
+
+pcm3d/demo_qpi.sh,0
+
+pcm3d/run_mem_op_test_aff.sh,0
+
+pcm3d/demo_mem.sh,0
+
+pcm3d/widget.h,375
+#define WIDGET_HWIDGET_H17,1553
+namespace Ui {Ui22,1621
+class Widget : public QGLWidgetWidget26,1657
+    Ui::Widget *ui;ui35,1780
+    GLfloat xRot, yRot, zRot, scale;xRot37,1801
+    GLfloat xRot, yRot, zRot, scale;yRot37,1801
+    GLfloat xRot, yRot, zRot, scale;zRot37,1801
+    GLfloat xRot, yRot, zRot, scale;scale37,1801
+    QPoint lastPos;lastPos38,1838
+
+msr.cpp,1676
+MsrHandle::MsrHandle(uint32 cpu) : cpu_id(cpu)MsrHandle38,1997
+MsrHandle::~MsrHandle()~MsrHandle46,2252
+class ThreadGroupTempAffinityThreadGroupTempAffinity52,2369
+	GROUP_AFFINITY PreviousGroupAffinity;PreviousGroupAffinity54,2401
+	ThreadGroupTempAffinity(uint32 core_id)ThreadGroupTempAffinity59,2562
+	~ThreadGroupTempAffinity()~ThreadGroupTempAffinity74,3083
+int32 MsrHandle::write(uint64 msr_number, uint64 value)write81,3202
+int32 MsrHandle::read(uint64 msr_number, uint64 * value)read109,3967
+MSRAccessor * MsrHandle::driver = NULL;driver141,4780
+int MsrHandle::num_handles = 0;num_handles142,4820
+MsrHandle::MsrHandle(uint32 cpu)MsrHandle144,4853
+MsrHandle::~MsrHandle()~MsrHandle158,5062
+int32 MsrHandle::write(uint64 msr_number, uint64 value)write168,5215
+int32 MsrHandle::read(uint64 msr_number, uint64 * value){read173,5330
+int32 MsrHandle::buildTopology(uint32 num_cores, void* ptr){buildTopology177,5443
+uint32 MsrHandle::getNumInstances(){getNumInstances181,5557
+uint32 MsrHandle::incrementNumInstances(){incrementNumInstances185,5635
+uint32 MsrHandle::decrementNumInstances(){decrementNumInstances189,5725
+MsrHandle::MsrHandle(uint32 cpu) : fd(-1), cpu_id(cpu)MsrHandle197,5892
+MsrHandle::~MsrHandle()~MsrHandle206,6113
+int32 MsrHandle::write(uint64 msr_number, uint64 value)write211,6172
+int32 MsrHandle::read(uint64 msr_number, uint64 * value)read220,6357
+MsrHandle::MsrHandle(uint32 cpu) : fd(-1), cpu_id(cpu)MsrHandle233,6620
+MsrHandle::~MsrHandle()~MsrHandle248,7014
+int32 MsrHandle::write(uint64 msr_number, uint64 value)write253,7073
+int32 MsrHandle::read(uint64 msr_number, uint64 * value)read258,7209
+
+msrtest.cpp,61
+#define NUM_CORES NUM_CORES21,1636
+int main()main24,1660
+
+PCM-Memory_Win/stdafx.h,41
+#define _WIN32_WINNT _WIN32_WINNT9,265
+
+PCM-Memory_Win/stdafx.cpp,0
+
+PCM-Memory_Win/pcm-memory-win.cpp,0

@@ -1,0 +1,485 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 54.09    385.45   385.45   616500     0.00     0.00  Map<double, double, plusOne<double> >::function()
+ 17.05    506.97   121.52  7058829     0.00     0.00  HR_Scheduler::lock(Cluster*, int)
+  7.79    562.50    55.53  1115402     0.00     0.00  HR_Scheduler::release_locks(int)
+  5.71    603.23    40.73       25     1.63    28.40  PoolThr::inf_loop()
+a 4.95    638.52    35.29   560774     0.00     0.00  HR_Scheduler::add(Job*, int)
+d 4.36    669.62    31.10   733655     0.00     0.00  HR_Scheduler::done(Job*, int, bool)
+g 2.74    689.14    19.51  1016223     0.00     0.00  HR_Scheduler::get(int)
+  0.82    694.97     5.83   672321     0.00     0.00  HR_Scheduler::find_active_set(int, SizedJob*)
+  0.66    699.65     4.68   664587     0.00     0.00  HR_Scheduler::find_job(int, Cluster*)
+  0.41    702.56     2.91   700559     0.00     0.00  ThreadPool::done_job(Job*, PoolThr*, bool)
+  0.37    705.20     2.64   590922     0.00     0.00  ThreadPool::add_job(Job*, PoolThr*)
+  0.25    706.98     1.78                             main
+  0.19    708.34     1.36  7161404     0.00     0.00  Map<double, double, plusOne<double> >::size(int)
+  0.07    708.82     0.48   199194     0.00     0.00  Fork::spawn(PoolThr*)
+  0.06    709.24     0.42   214177     0.00     0.00  HR_Scheduler::release_active_set(Cluster*, int)
+  0.05    709.58     0.34   473389     0.00     0.00  Fork::join(Job*)
+  0.04    709.90     0.32                             Mutex::~Mutex()
+  0.04    710.21     0.31   207977     0.00     0.00  SizedJob::fork(int, Job**, Job*)
+  0.04    710.51     0.30    15374     0.00     0.00  HR_Scheduler::unlock(Cluster*, int)
+  0.04    710.80     0.29   832614     0.00     0.00  std::vector<SizedJob*, std::allocator<SizedJob*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<SizedJob**, std::vector<SizedJob*, std::allocator<SizedJob*> > >, SizedJob* const&)
+  0.04    711.07     0.27    33446     0.00     0.00  RecursiveRepeatedMap1<double, plusOne<double> >::function()
+  0.02    711.24     0.17   201695     0.00     0.00  Fork::Fork(Fork*, Job*, int, Job**, Job*)
+  0.02    711.39     0.15   614994     0.00     0.00  PoolThr::run_job()
+  0.02    711.53     0.14  1213493     0.00     0.00  disable_counter
+  0.02    711.67     0.14   636750     0.00     0.00  Job::run()
+  0.02    711.81     0.14                             std::vector<ActiveSet*, std::allocator<ActiveSet*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<ActiveSet**, std::vector<ActiveSet*, std::allocator<ActiveSet*> > >, ActiveSet* const&)
+  0.02    711.94     0.13   573640     0.00     0.00  Map<double, double, plusOne<double> >::~Map()
+  0.01    712.04     0.11  1247209     0.00     0.00  PoolThr::get_pool()
+  0.01    712.14     0.10   304879     0.00     0.00  RecursiveRepeatedMap1<double, plusOne<double> >::size(int)
+  0.01    712.23     0.09                             Scheduler::done(Job*, int, bool)
+  0.01    712.31     0.08   440937     0.00     0.00  Job::join()
+  0.01    712.39     0.08                             Cluster::Cluster(long long, int, int, Cluster*, Cluster**)
+  0.01    712.46     0.07        1     0.07     0.07  start_timers(unsigned int)
+  0.01    712.52     0.06                             SizedJob::cast(Job*, bool)
+  0.01    712.57     0.05     5290     0.00     0.00  T.238
+  0.00    712.60     0.03    25728     0.00     0.00  Job::unary_fork(Job*, Job*)
+  0.00    712.63     0.03        1     0.03     0.03  global constructors keyed to Job::run()
+  0.00    712.66     0.03                             HR_Scheduler::more(int)
+  0.00    712.68     0.02        1     0.02     0.02  global constructors keyed to Fork::Fork(Fork*, Job*, int, Job**, Job*)
+  0.00    712.70     0.02    31269     0.00     0.00  RecursiveRepeatedMap1<double, plusOne<double> >::~RecursiveRepeatedMap1()
+  0.00    712.71     0.01  1233467     0.00     0.00  enable_counter
+  0.00    712.72     0.01   214701     0.00     0.00  Mutex::Mutex()
+  0.00    712.73     0.01   176085     0.00     0.00  Job::binary_fork(Job*, Job*, Job*)
+  0.00    712.74     0.01                             HR_Scheduler::check_lock_consistency(int)
+  0.00    712.75     0.01                             libperf_getlogger
+  0.00    712.75     0.01                             WS_Scheduler::get(int)
+  0.00    712.75     0.00      130     0.00     0.00  read_counter
+  0.00    712.75     0.00      101     0.00     0.00  Cluster::Cluster(long long, int, int, Cluster*, Cluster**)
+  0.00    712.75     0.00       51     0.00     0.00  new_counter
+  0.00    712.75     0.00       29     0.00     0.00  Thread::Thread(int)
+  0.00    712.75     0.00       28     0.00     0.00  Thread::set_affinity_attr(unsigned int)
+  0.00    712.75     0.00       28     0.00     0.00  Thread::create(unsigned int, bool, bool)
+  0.00    712.75     0.00        1     0.00     0.00  global constructors keyed to utils::flush_cache(int)
+  0.00    712.75     0.00        1     0.00     0.00  global constructors keyed to Scheduler::check_range(int, int, int, std::string*)
+  0.00    712.75     0.00        1     0.00     0.00  global constructors keyed to _run_thread
+  0.00    712.75     0.00        1     0.00     0.00  global constructors keyed to active
+  0.00    712.75     0.00        1     0.00     0.00  print_timers(unsigned int)
+  0.00    712.75     0.00        1     0.00     0.07  tp_init(unsigned int, unsigned int*, Scheduler*, Job*)
+  0.00    712.75     0.00        1     0.00     0.00  ThreadPool::ThreadPool(unsigned int, Scheduler*, unsigned int*)
+  0.00    712.75     0.00        1     0.00     0.00  HR_Scheduler::HR_Scheduler(int, int, int*, long long*, int*, int)
+  0.00    712.75     0.00        1     0.00     0.00  Cluster::create_tree(Cluster*, Cluster**, int, unsigned int*, long long*, unsigned int*)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 712.75 seconds
+
+index % time    self  children    called     name
+               40.73  669.38      25/25          _run_thread [2]
+[1]     99.6   40.73  669.38      25         PoolThr::inf_loop() [1]
+                0.15  532.93  614994/614994      PoolThr::run_job() [3]
+               19.51  116.63 1016223/1016223     HR_Scheduler::get(int) [6]
+                0.14    0.00 1213493/1213493     disable_counter [26]
+                0.01    0.00 1233463/1233467     enable_counter [44]
+                0.00    0.00      47/51          new_counter [51]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     99.6    0.00  710.11                 _run_thread [2]
+               40.73  669.38      25/25          PoolThr::inf_loop() [1]
+-----------------------------------------------
+                0.15  532.93  614994/614994      PoolThr::inf_loop() [1]
+[3]     74.8    0.15  532.93  614994         PoolThr::run_job() [3]
+                0.14  532.65  636750/636750      Job::run() [4]
+                0.13    0.00  573640/573640      Map<double, double, plusOne<double> >::~Map() [28]
+                0.02    0.00   31269/31269       RecursiveRepeatedMap1<double, plusOne<double> >::~RecursiveRepeatedMap1() [43]
+-----------------------------------------------
+                0.14  532.65  636750/636750      PoolThr::run_job() [3]
+[4]     74.8    0.14  532.65  636750         Job::run() [4]
+              385.45    0.00  616500/616500      Map<double, double, plusOne<double> >::function() [5]
+                0.34   76.03  473389/473389      Fork::join(Job*) [9]
+                0.48   69.42  199194/199194      Fork::spawn(PoolThr*) [11]
+                0.31    0.17  207977/207977      SizedJob::fork(int, Job**, Job*) [19]
+                0.27    0.05   33446/33446       RecursiveRepeatedMap1<double, plusOne<double> >::function() [21]
+                0.08    0.00  440937/440937      Job::join() [32]
+                0.03    0.00   25728/25728       Job::unary_fork(Job*, Job*) [39]
+                0.01    0.00  176085/176085      Job::binary_fork(Job*, Job*, Job*) [47]
+-----------------------------------------------
+              385.45    0.00  616500/616500      Job::run() [4]
+[5]     54.1  385.45    0.00  616500         Map<double, double, plusOne<double> >::function() [5]
+-----------------------------------------------
+               19.51  116.63 1016223/1016223     PoolThr::inf_loop() [1]
+[6]     19.1   19.51  116.63 1016223         HR_Scheduler::get(int) [6]
+               55.53    0.00 1115402/1115402     HR_Scheduler::release_locks(int) [14]
+               55.20    0.00 3206750/7058829     HR_Scheduler::lock(Cluster*, int) [7]
+                4.68    0.55  664587/664587      HR_Scheduler::find_job(int, Cluster*) [16]
+                0.30    0.00   15374/15374       HR_Scheduler::unlock(Cluster*, int) [23]
+                0.23    0.00 1218309/7161404     Map<double, double, plusOne<double> >::size(int) [18]
+                0.08    0.00  234065/832614      std::vector<SizedJob*, std::allocator<SizedJob*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<SizedJob**, std::vector<SizedJob*, std::allocator<SizedJob*> > >, SizedJob* const&) [24]
+                0.04    0.00   18109/214177      HR_Scheduler::release_active_set(Cluster*, int) [20]
+                0.01    0.00   40795/304879      RecursiveRepeatedMap1<double, plusOne<double> >::size(int) [30]
+                0.01    0.00  214701/214701      Mutex::Mutex() [46]
+-----------------------------------------------
+               32.67    0.00 1897571/7058829     HR_Scheduler::find_active_set(int, SizedJob*) [15]
+               33.65    0.00 1954508/7058829     HR_Scheduler::done(Job*, int, bool) [13]
+               55.20    0.00 3206750/7058829     HR_Scheduler::get(int) [6]
+[7]     17.0  121.52    0.00 7058829         HR_Scheduler::lock(Cluster*, int) [7]
+-----------------------------------------------
+                0.95   26.76  212740/590922      Fork::join(Job*) [9]
+                1.69   47.57  378182/590922      Fork::spawn(PoolThr*) [11]
+[8]     10.8    2.64   74.33  590922         ThreadPool::add_job(Job*, PoolThr*) [8]
+               35.29   39.03  560773/560774      HR_Scheduler::add(Job*, int) [10]
+-----------------------------------------------
+                0.34   76.03  473389/473389      Job::run() [4]
+[9]     10.7    0.34   76.03  473389         Fork::join(Job*) [9]
+                2.05   46.21  494478/700559      ThreadPool::done_job(Job*, PoolThr*, bool) [12]
+                0.95   26.76  212740/590922      ThreadPool::add_job(Job*, PoolThr*) [8]
+                0.06    0.00  672244/1247209     PoolThr::get_pool() [29]
+-----------------------------------------------
+                0.00    0.00       1/560774      tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [34]
+               35.29   39.03  560773/560774      ThreadPool::add_job(Job*, PoolThr*) [8]
+[10]    10.4   35.29   39.03  560774         HR_Scheduler::add(Job*, int) [10]
+                5.83   32.67  672321/672321      HR_Scheduler::find_active_set(int, SizedJob*) [15]
+                0.31    0.00 1625118/7161404     Map<double, double, plusOne<double> >::size(int) [18]
+                0.21    0.00  598549/832614      std::vector<SizedJob*, std::allocator<SizedJob*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<SizedJob**, std::vector<SizedJob*, std::allocator<SizedJob*> > >, SizedJob* const&) [24]
+                0.02    0.00   56309/304879      RecursiveRepeatedMap1<double, plusOne<double> >::size(int) [30]
+-----------------------------------------------
+                0.48   69.42  199194/199194      Job::run() [4]
+[11]     9.8    0.48   69.42  199194         Fork::spawn(PoolThr*) [11]
+                1.69   47.57  378182/590922      ThreadPool::add_job(Job*, PoolThr*) [8]
+                0.86   19.26  206080/700559      ThreadPool::done_job(Job*, PoolThr*, bool) [12]
+                0.05    0.00  574963/1247209     PoolThr::get_pool() [29]
+-----------------------------------------------
+                0.00    0.00       1/700559      Job::join() [32]
+                0.86   19.26  206080/700559      Fork::spawn(PoolThr*) [11]
+                2.05   46.21  494478/700559      Fork::join(Job*) [9]
+[12]     9.6    2.91   65.47  700559         ThreadPool::done_job(Job*, PoolThr*, bool) [12]
+               31.10   34.37  733655/733655      HR_Scheduler::done(Job*, int, bool) [13]
+-----------------------------------------------
+               31.10   34.37  733655/733655      ThreadPool::done_job(Job*, PoolThr*, bool) [12]
+[13]     9.2   31.10   34.37  733655         HR_Scheduler::done(Job*, int, bool) [13]
+               33.65    0.00 1954508/7058829     HR_Scheduler::lock(Cluster*, int) [7]
+                0.38    0.00  196068/214177      HR_Scheduler::release_active_set(Cluster*, int) [20]
+                0.32    0.00 1666771/7161404     Map<double, double, plusOne<double> >::size(int) [18]
+                0.02    0.00   70938/304879      RecursiveRepeatedMap1<double, plusOne<double> >::size(int) [30]
+-----------------------------------------------
+               55.53    0.00 1115402/1115402     HR_Scheduler::get(int) [6]
+[14]     7.8   55.53    0.00 1115402         HR_Scheduler::release_locks(int) [14]
+-----------------------------------------------
+                5.83   32.67  672321/672321      HR_Scheduler::add(Job*, int) [10]
+[15]     5.4    5.83   32.67  672321         HR_Scheduler::find_active_set(int, SizedJob*) [15]
+               32.67    0.00 1897571/7058829     HR_Scheduler::lock(Cluster*, int) [7]
+-----------------------------------------------
+                4.68    0.55  664587/664587      HR_Scheduler::get(int) [6]
+[16]     0.7    4.68    0.55  664587         HR_Scheduler::find_job(int, Cluster*) [16]
+                0.50    0.00 2651206/7161404     Map<double, double, plusOne<double> >::size(int) [18]
+                0.04    0.00  136837/304879      RecursiveRepeatedMap1<double, plusOne<double> >::size(int) [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.3    1.78    0.07                 main [17]
+                0.00    0.07       1/1           tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [34]
+                0.00    0.00       1/1           print_timers(unsigned int) [73]
+                0.00    0.00       1/1           HR_Scheduler::HR_Scheduler(int, int, int*, long long*, int*, int) [75]
+-----------------------------------------------
+                0.23    0.00 1218309/7161404     HR_Scheduler::get(int) [6]
+                0.31    0.00 1625118/7161404     HR_Scheduler::add(Job*, int) [10]
+                0.32    0.00 1666771/7161404     HR_Scheduler::done(Job*, int, bool) [13]
+                0.50    0.00 2651206/7161404     HR_Scheduler::find_job(int, Cluster*) [16]
+[18]     0.2    1.36    0.00 7161404         Map<double, double, plusOne<double> >::size(int) [18]
+-----------------------------------------------
+                0.31    0.17  207977/207977      Job::run() [4]
+[19]     0.1    0.31    0.17  207977         SizedJob::fork(int, Job**, Job*) [19]
+                0.17    0.00  201695/201695      Fork::Fork(Fork*, Job*, int, Job**, Job*) [25]
+-----------------------------------------------
+                0.04    0.00   18109/214177      HR_Scheduler::get(int) [6]
+                0.38    0.00  196068/214177      HR_Scheduler::done(Job*, int, bool) [13]
+[20]     0.1    0.42    0.00  214177         HR_Scheduler::release_active_set(Cluster*, int) [20]
+-----------------------------------------------
+                0.27    0.05   33446/33446       Job::run() [4]
+[21]     0.0    0.27    0.05   33446         RecursiveRepeatedMap1<double, plusOne<double> >::function() [21]
+                0.05    0.00    5290/5290        T.238 [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     0.0    0.32    0.00                 Mutex::~Mutex() [22]
+-----------------------------------------------
+                0.30    0.00   15374/15374       HR_Scheduler::get(int) [6]
+[23]     0.0    0.30    0.00   15374         HR_Scheduler::unlock(Cluster*, int) [23]
+-----------------------------------------------
+                0.08    0.00  234065/832614      HR_Scheduler::get(int) [6]
+                0.21    0.00  598549/832614      HR_Scheduler::add(Job*, int) [10]
+[24]     0.0    0.29    0.00  832614         std::vector<SizedJob*, std::allocator<SizedJob*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<SizedJob**, std::vector<SizedJob*, std::allocator<SizedJob*> > >, SizedJob* const&) [24]
+-----------------------------------------------
+                0.17    0.00  201695/201695      SizedJob::fork(int, Job**, Job*) [19]
+[25]     0.0    0.17    0.00  201695         Fork::Fork(Fork*, Job*, int, Job**, Job*) [25]
+-----------------------------------------------
+                0.14    0.00 1213493/1213493     PoolThr::inf_loop() [1]
+[26]     0.0    0.14    0.00 1213493         disable_counter [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.0    0.14    0.00                 std::vector<ActiveSet*, std::allocator<ActiveSet*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<ActiveSet**, std::vector<ActiveSet*, std::allocator<ActiveSet*> > >, ActiveSet* const&) [27]
+-----------------------------------------------
+                0.13    0.00  573640/573640      PoolThr::run_job() [3]
+[28]     0.0    0.13    0.00  573640         Map<double, double, plusOne<double> >::~Map() [28]
+-----------------------------------------------
+                0.00    0.00       2/1247209     Job::join() [32]
+                0.05    0.00  574963/1247209     Fork::spawn(PoolThr*) [11]
+                0.06    0.00  672244/1247209     Fork::join(Job*) [9]
+[29]     0.0    0.11    0.00 1247209         PoolThr::get_pool() [29]
+-----------------------------------------------
+                0.01    0.00   40795/304879      HR_Scheduler::get(int) [6]
+                0.02    0.00   56309/304879      HR_Scheduler::add(Job*, int) [10]
+                0.02    0.00   70938/304879      HR_Scheduler::done(Job*, int, bool) [13]
+                0.04    0.00  136837/304879      HR_Scheduler::find_job(int, Cluster*) [16]
+[30]     0.0    0.10    0.00  304879         RecursiveRepeatedMap1<double, plusOne<double> >::size(int) [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.0    0.09    0.00                 Scheduler::done(Job*, int, bool) [31]
+-----------------------------------------------
+                0.08    0.00  440937/440937      Job::run() [4]
+[32]     0.0    0.08    0.00  440937         Job::join() [32]
+                0.00    0.00       1/700559      ThreadPool::done_job(Job*, PoolThr*, bool) [12]
+                0.00    0.00       2/1247209     PoolThr::get_pool() [29]
+-----------------------------------------------
+                                                 <spontaneous>
+[33]     0.0    0.08    0.00                 Cluster::Cluster(long long, int, int, Cluster*, Cluster**) [33]
+-----------------------------------------------
+                0.00    0.07       1/1           main [17]
+[34]     0.0    0.00    0.07       1         tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [34]
+                0.07    0.00       1/1           start_timers(unsigned int) [35]
+                0.00    0.00       1/560774      HR_Scheduler::add(Job*, int) [10]
+                0.00    0.00       4/1233467     enable_counter [44]
+                0.00    0.00       4/51          new_counter [51]
+                0.00    0.00       1/1           ThreadPool::ThreadPool(unsigned int, Scheduler*, unsigned int*) [74]
+-----------------------------------------------
+                0.07    0.00       1/1           tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [34]
+[35]     0.0    0.07    0.00       1         start_timers(unsigned int) [35]
+-----------------------------------------------
+                                                 <spontaneous>
+[36]     0.0    0.06    0.00                 SizedJob::cast(Job*, bool) [36]
+-----------------------------------------------
+                0.05    0.00    5290/5290        RecursiveRepeatedMap1<double, plusOne<double> >::function() [21]
+[37]     0.0    0.05    0.00    5290         T.238 [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[38]     0.0    0.00    0.05                 __do_global_ctors_aux [38]
+                0.03    0.00       1/1           global constructors keyed to Job::run() [40]
+                0.02    0.00       1/1           global constructors keyed to Fork::Fork(Fork*, Job*, int, Job**, Job*) [42]
+                0.00    0.00       1/1           global constructors keyed to utils::flush_cache(int) [69]
+                0.00    0.00       1/1           global constructors keyed to active [72]
+                0.00    0.00       1/1           global constructors keyed to Scheduler::check_range(int, int, int, std::string*) [70]
+                0.00    0.00       1/1           global constructors keyed to _run_thread [71]
+-----------------------------------------------
+                0.03    0.00   25728/25728       Job::run() [4]
+[39]     0.0    0.03    0.00   25728         Job::unary_fork(Job*, Job*) [39]
+-----------------------------------------------
+                0.03    0.00       1/1           __do_global_ctors_aux [38]
+[40]     0.0    0.03    0.00       1         global constructors keyed to Job::run() [40]
+-----------------------------------------------
+                                                 <spontaneous>
+[41]     0.0    0.03    0.00                 HR_Scheduler::more(int) [41]
+-----------------------------------------------
+                0.02    0.00       1/1           __do_global_ctors_aux [38]
+[42]     0.0    0.02    0.00       1         global constructors keyed to Fork::Fork(Fork*, Job*, int, Job**, Job*) [42]
+-----------------------------------------------
+                0.02    0.00   31269/31269       PoolThr::run_job() [3]
+[43]     0.0    0.02    0.00   31269         RecursiveRepeatedMap1<double, plusOne<double> >::~RecursiveRepeatedMap1() [43]
+-----------------------------------------------
+                0.00    0.00       4/1233467     tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [34]
+                0.01    0.00 1233463/1233467     PoolThr::inf_loop() [1]
+[44]     0.0    0.01    0.00 1233467         enable_counter [44]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.0    0.01    0.00                 libperf_getlogger [45]
+-----------------------------------------------
+                0.01    0.00  214701/214701      HR_Scheduler::get(int) [6]
+[46]     0.0    0.01    0.00  214701         Mutex::Mutex() [46]
+-----------------------------------------------
+                0.01    0.00  176085/176085      Job::run() [4]
+[47]     0.0    0.01    0.00  176085         Job::binary_fork(Job*, Job*, Job*) [47]
+-----------------------------------------------
+                                                 <spontaneous>
+[48]     0.0    0.01    0.00                 HR_Scheduler::check_lock_consistency(int) [48]
+-----------------------------------------------
+                                                 <spontaneous>
+[49]     0.0    0.01    0.00                 WS_Scheduler::get(int) [49]
+-----------------------------------------------
+                0.00    0.00     130/130         print_timers(unsigned int) [73]
+[50]     0.0    0.00    0.00     130         read_counter [50]
+-----------------------------------------------
+                0.00    0.00       4/51          tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [34]
+                0.00    0.00      47/51          PoolThr::inf_loop() [1]
+[51]     0.0    0.00    0.00      51         new_counter [51]
+-----------------------------------------------
+                0.00    0.00     101/101         Cluster::create_tree(Cluster*, Cluster**, int, unsigned int*, long long*, unsigned int*) [76]
+[65]     0.0    0.00    0.00     101         Cluster::Cluster(long long, int, int, Cluster*, Cluster**) [65]
+-----------------------------------------------
+                0.00    0.00      29/29          ThreadPool::ThreadPool(unsigned int, Scheduler*, unsigned int*) [74]
+[66]     0.0    0.00    0.00      29         Thread::Thread(int) [66]
+-----------------------------------------------
+                0.00    0.00      28/28          Thread::create(unsigned int, bool, bool) [68]
+[67]     0.0    0.00    0.00      28         Thread::set_affinity_attr(unsigned int) [67]
+-----------------------------------------------
+                0.00    0.00      28/28          ThreadPool::ThreadPool(unsigned int, Scheduler*, unsigned int*) [74]
+[68]     0.0    0.00    0.00      28         Thread::create(unsigned int, bool, bool) [68]
+                0.00    0.00      28/28          Thread::set_affinity_attr(unsigned int) [67]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [38]
+[69]     0.0    0.00    0.00       1         global constructors keyed to utils::flush_cache(int) [69]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [38]
+[70]     0.0    0.00    0.00       1         global constructors keyed to Scheduler::check_range(int, int, int, std::string*) [70]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [38]
+[71]     0.0    0.00    0.00       1         global constructors keyed to _run_thread [71]
+-----------------------------------------------
+                0.00    0.00       1/1           __do_global_ctors_aux [38]
+[72]     0.0    0.00    0.00       1         global constructors keyed to active [72]
+-----------------------------------------------
+                0.00    0.00       1/1           main [17]
+[73]     0.0    0.00    0.00       1         print_timers(unsigned int) [73]
+                0.00    0.00     130/130         read_counter [50]
+-----------------------------------------------
+                0.00    0.00       1/1           tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [34]
+[74]     0.0    0.00    0.00       1         ThreadPool::ThreadPool(unsigned int, Scheduler*, unsigned int*) [74]
+                0.00    0.00      29/29          Thread::Thread(int) [66]
+                0.00    0.00      28/28          Thread::create(unsigned int, bool, bool) [68]
+-----------------------------------------------
+                0.00    0.00       1/1           main [17]
+[75]     0.0    0.00    0.00       1         HR_Scheduler::HR_Scheduler(int, int, int*, long long*, int*, int) [75]
+                0.00    0.00       1/1           Cluster::create_tree(Cluster*, Cluster**, int, unsigned int*, long long*, unsigned int*) [76]
+-----------------------------------------------
+                                 100             Cluster::create_tree(Cluster*, Cluster**, int, unsigned int*, long long*, unsigned int*) [76]
+                0.00    0.00       1/1           HR_Scheduler::HR_Scheduler(int, int, int*, long long*, int*, int) [75]
+[76]     0.0    0.00    0.00       1+100     Cluster::create_tree(Cluster*, Cluster**, int, unsigned int*, long long*, unsigned int*) [76]
+                0.00    0.00     101/101         Cluster::Cluster(long long, int, int, Cluster*, Cluster**) [65]
+                                 100             Cluster::create_tree(Cluster*, Cluster**, int, unsigned int*, long long*, unsigned int*) [76]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [37] T.238                  [41] HR_Scheduler::more(int) [68] Thread::create(unsigned int, bool, bool)
+  [40] global constructors keyed to Job::run() [23] HR_Scheduler::unlock(Cluster*, int) [66] Thread::Thread(int)
+  [42] global constructors keyed to Fork::Fork(Fork*, Job*, int, Job**, Job*) [16] HR_Scheduler::find_job(int, Cluster*) [76] Cluster::create_tree(Cluster*, Cluster**, int, unsigned int*, long long*, unsigned int*)
+  [69] global constructors keyed to utils::flush_cache(int) [75] HR_Scheduler::HR_Scheduler(int, int, int*, long long*, int*, int) [65] Cluster::Cluster(long long, int, int, Cluster*, Cluster**)
+  [70] global constructors keyed to Scheduler::check_range(int, int, int, std::string*) [49] WS_Scheduler::get(int) [33] Cluster::Cluster(long long, int, int, Cluster*, Cluster**)
+  [71] global constructors keyed to _run_thread [30] RecursiveRepeatedMap1<double, plusOne<double> >::size(int) [3] PoolThr::run_job()
+  [72] global constructors keyed to active [21] RecursiveRepeatedMap1<double, plusOne<double> >::function() [29] PoolThr::get_pool()
+  [73] print_timers(unsigned int) [43] RecursiveRepeatedMap1<double, plusOne<double> >::~RecursiveRepeatedMap1() [1] PoolThr::inf_loop()
+  [35] start_timers(unsigned int) [39] Job::unary_fork(Job*, Job*) [36] SizedJob::cast(Job*, bool)
+  [34] tp_init(unsigned int, unsigned int*, Scheduler*, Job*) [47] Job::binary_fork(Job*, Job*, Job*) [19] SizedJob::fork(int, Job**, Job*)
+   [8] ThreadPool::add_job(Job*, PoolThr*) [4] Job::run() [31] Scheduler::done(Job*, int, bool)
+  [12] ThreadPool::done_job(Job*, PoolThr*, bool) [32] Job::join() [24] std::vector<SizedJob*, std::allocator<SizedJob*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<SizedJob**, std::vector<SizedJob*, std::allocator<SizedJob*> > >, SizedJob* const&)
+  [74] ThreadPool::ThreadPool(unsigned int, Scheduler*, unsigned int*) [18] Map<double, double, plusOne<double> >::size(int) [27] std::vector<ActiveSet*, std::allocator<ActiveSet*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<ActiveSet**, std::vector<ActiveSet*, std::allocator<ActiveSet*> > >, ActiveSet* const&)
+  [14] HR_Scheduler::release_locks(int) [5] Map<double, double, plusOne<double> >::function() [26] disable_counter
+  [15] HR_Scheduler::find_active_set(int, SizedJob*) [28] Map<double, double, plusOne<double> >::~Map() [44] enable_counter
+  [20] HR_Scheduler::release_active_set(Cluster*, int) [9] Fork::join(Job*) [45] libperf_getlogger
+  [48] HR_Scheduler::check_lock_consistency(int) [11] Fork::spawn(PoolThr*) [17] main
+  [10] HR_Scheduler::add(Job*, int) [25] Fork::Fork(Fork*, Job*, int, Job**, Job*) [51] new_counter
+   [6] HR_Scheduler::get(int) [46] Mutex::Mutex()         [50] read_counter
+  [13] HR_Scheduler::done(Job*, int, bool) [22] Mutex::~Mutex()
+   [7] HR_Scheduler::lock(Cluster*, int) [67] Thread::set_affinity_attr(unsigned int)
