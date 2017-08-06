@@ -1,0 +1,56 @@
+
+- To switch between centralized / decentralized locking, choose the option in config.mk, set LIBVER
+
+- Dont use default constructors for creating continuations, it copies locks with in jobs. Write own new constructor that uses ":SizedJob(del)" to freshly instantiate base class object entries
+
+- Always annotate strands that are continuations of each other with the same size function, else HR_Scheduler wont work
+
+- Use machine-config.hh file to choose machine selection
+
+- After generate test data, "flush" caches by reading a big object to avoid caching issues
+
+- ??? Not implemented ??? How to memory manage? Separate large allocations from small allocations? Create new routine newA?
+
+- Tune samplesort base params and kernel
+
+- To use block tranpose, call the sizing function first. And while passing offsets, compute the last offset beyond all elements, ie, the (n+1)-th entry
+
+- Resetting thread affinity in the middle of the task does not seem to work. Setting it up front seems fine.
+
+- Dont use rand() funciton, is probably a bottleneck as it needs to lock the seed variable to update it.
+
+TO DO
+
+Sanity checks in scheduler. 
+(a) Continuations should have same space as their matching threads
+(b) Check when deleting an active set if the space has been reduced to zero
+(c) Reject zero space jobs
+
+
+Validate space annotations. Check if the number of cache misses matches up with annotation.
+In a sequential run: flush the cache before starting a subtask, you can check for both over- and under-estimation 
+of space annotations
+
+Clean up
+(a) Remove file loggin from performace countesrs
+
+
+Questions
+-Front end interface, use a C-to-C parser or use Cilk+ parser and build scheduler in to Cilk+?
+-Mods for blacklight (pragmas for moving data around)
+
+Test examples
+-QSort
+-SSort
+-Scan/Map
+-SpMVX
+-Radix
+-Suffix
+-
+
+Test machines
+Monster
+Teach
+MIC
+GaTech 80 cores
+Blacklight
